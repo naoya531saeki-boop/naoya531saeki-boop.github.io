@@ -153,6 +153,7 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(36px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
 .reveal.vis{opacity:1;transform:translateY(0);}
 
 /* MOBILE */
@@ -530,12 +531,12 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
       </div>
       <div class="form-wrap reveal">
         <h3>お問い合わせフォーム</h3>
-        <div class="form-group"><label>お名前 *</label><input type="text" placeholder="山田 太郎"></div>
-        <div class="form-group"><label>会社名</label><input type="text" placeholder="株式会社〇〇"></div>
-        <div class="form-group"><label>メールアドレス *</label><input type="email" placeholder="example@company.com"></div>
+        <div class="form-group"><label>お名前 *</label><input id="f-name" type="text" name="name" placeholder="山田 太郎"></div>
+        <div class="form-group"><label>会社名</label><input id="f-company" type="text" name="company" placeholder="株式会社〇〇"></div>
+        <div class="form-group"><label>メールアドレス *</label><input id="f-email" type="email" name="email" placeholder="example@company.com"></div>
         <div class="form-group">
           <label>お問い合わせ内容</label>
-          <select>
+          <select id="f-type" name="type">
             <option value="">選択してください</option>
             <option>ショート動画制作について</option>
             <option>YouTube動画編集について</option>
@@ -545,7 +546,8 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
             <option>その他</option>
           </select>
         </div>
-        <div class="form-group"><label>メッセージ</label><textarea placeholder="ご質問・ご要望をお気軽にどうぞ"></textarea></div>
+        <div class="form-group"><label>メッセージ</label><textarea id="f-message" name="message" placeholder="ご質問・ご要望をお気軽にどうぞ"></textarea></div>
+        <div id="form-status"></div>
         <button class="form-submit" onclick="handleSubmit()">送信する →</button>
         <p class="form-note">※ 通常1〜2営業日以内にご返信いたします。<br>お急ぎの場合はLINEよりご連絡ください。</p>
       </div>
@@ -570,29 +572,57 @@ function showPage(name) {
 }
 function initReveal() {
   var els = document.querySelectorAll('.page.active .reveal');
+  els.forEach(function(el){ el.classList.add('visible'); });
   var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e, i) {
-      if (e.isIntersecting) setTimeout(function(){ e.target.classList.add('vis'); }, i * 70);
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
-  els.forEach(function(el){ el.classList.remove('vis'); obs.observe(el); });
-}
-function filterPort(cat) {
-  document.querySelectorAll('.port-item').forEach(function(item) {
-    item.style.display = (cat === 'all' || item.dataset.cat === cat) ? 'block' : 'none';
-  });
-  ['all','video','web','app'].forEach(function(c) {
-    var btn = document.getElementById('filter-' + c);
-    if (c === cat) { btn.style.background='var(--gold)'; btn.style.color='var(--black)'; btn.style.border='none'; }
-    else { btn.style.background='transparent'; btn.style.color='#888'; btn.style.border='1px solid #333'; }
-  });
+  }, { threshold: 0.05 });
+  els.forEach(function(el){ obs.observe(el); });
 }
 function handleSubmit() {
-  alert('お問い合わせありがとうございます！\n1〜2営業日以内にご返信いたします。\nお急ぎの場合はLINEへご連絡ください。');
+  var name = document.getElementById('f-name').value.trim();
+  var email = document.getElementById('f-email').value.trim();
+  var company = document.getElementById('f-company').value.trim();
+  var type = document.getElementById('f-type').value;
+  var message = document.getElementById('f-message').value.trim();
+  var status = document.getElementById('form-status');
+  if (!name || !email) {
+    status.innerHTML = '<p style="color:#e74c3c;margin-bottom:12px;">※ お名前とメールアドレスは必須です。</p>';
+    return;
+  }
+  var btn = document.querySelector('.form-submit');
+  btn.disabled = true;
+  btn.textContent = '送信中...';
+  status.innerHTML = '';
+  fetch('https://formspree.io/f/mnjgpelk', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ name: name, email: email, company: company, type: type, message: message })
+  }).then(function(res) {
+    if (res.ok) {
+      status.innerHTML = '<p style="color:#C9A84C;margin-bottom:12px;">✓ 送信が完了しました。1〜2営業日以内にご返信いたします。</p>';
+      document.getElementById('f-name').value = '';
+      document.getElementById('f-company').value = '';
+      document.getElementById('f-email').value = '';
+      document.getElementById('f-type').value = '';
+      document.getElementById('f-message').value = '';
+      btn.textContent = '送信完了 ✓';
+    } else {
+      status.innerHTML = '<p style="color:#e74c3c;margin-bottom:12px;">送信に失敗しました。時間をおいて再度お試しください。</p>';
+      btn.disabled = false;
+      btn.textContent = '送信する →';
+    }
+  }).catch(function() {
+    status.innerHTML = '<p style="color:#e74c3c;margin-bottom:12px;">通信エラーが発生しました。ネットワークをご確認ください。</p>';
+    btn.disabled = false;
+    btn.textContent = '送信する →';
+  });
 }
-window.addEventListener('scroll', function() {
-  document.querySelector('nav').style.borderBottomColor = window.scrollY > 40 ? 'rgba(201,168,76,0.3)' : 'rgba(201,168,76,0.18)';
-});
+showPage('home');
 initReveal();
 </script>
 </body>
