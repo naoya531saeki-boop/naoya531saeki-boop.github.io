@@ -3,7 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0GP4V77CDZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0GP4V77CDZ');
+</script>
 <title>株式会社粋（SUI）| 動画制作・WEB・アプリ開発</title>
+<meta name="description" content="動画制作・YouTube編集・WEB制作・アプリ開発をワンストップで。ショート動画¥10,000〜、YouTube編集¥2,000〜/分。累計1,000本以上の実績。無料相談受付中。">
+<meta name="keywords" content="動画制作,YouTube編集,ショート動画,TikTok,Instagram,WEB制作,アプリ開発,SNS運用,東京,格安,外注">
+<meta property="og:title" content="株式会社粋（SUI）| 動画制作・WEB・アプリ開発">
+<meta property="og:description" content="動画制作・YouTube編集・WEB制作をワンストップで。累計1,000本以上の実績。ショート動画¥10,000〜。無料相談受付中。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sui-creative.com">
+<meta property="og:site_name" content="株式会社粋（SUI）">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="株式会社粋（SUI）| 動画制作・WEB・アプリ開発">
+<meta name="twitter:description" content="動画制作・YouTube編集・WEB制作をワンストップで。累計1,000本以上の実績。無料相談受付中。">
+<link rel="canonical" href="https://sui-creative.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -12,7 +32,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--white);font-family:'Noto Sans JP',sans-serif;overflow-x:hidden;}
+body{background:var(--black);color:var(--white);font-family:sans-serif;overflow-x:hidden;}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:16px 48px;background:rgba(13,13,13,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--light-border);}
@@ -20,18 +40,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .nav-links{display:flex;gap:0;list-style:none;}
 .nav-links li a{display:block;padding:8px 16px;color:#aaa;text-decoration:none;font-size:13px;letter-spacing:1px;transition:color 0.3s;cursor:pointer;border:none;background:none;}
 .nav-links li a:hover,.nav-links li a.active{color:var(--gold);}
-.nav-cta{background:var(--gold);color:var(--black);border:none;padding:10px 24px;font-size:13px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;letter-spacing:1px;transition:all 0.3s;text-decoration:none;display:inline-block;}
+#nav-hamburger{display:none;}
+@media(max-width:768px){
+  #nav-hamburger{display:flex !important;}
+  .nav-cta{display:none;}
+}
+.nav-cta{background:var(--gold);color:var(--black);border:none;padding:10px 24px;font-size:13px;font-weight:700;font-family:sans-serif;cursor:pointer;letter-spacing:1px;transition:all 0.3s;text-decoration:none;display:inline-block;}
 .nav-cta:hover{background:var(--gold2);}
 
 /* PAGES */
 .page{display:none;padding-top:72px;min-height:100vh;}
 .page.active{display:block;}
+/* ワイプ後にフェードイン */
+.page.active.page-reveal{animation:pageReveal 0.4s ease both;}
+@keyframes pageReveal{from{opacity:0}to{opacity:1}}
 
 /* HERO */
 .hero{min-height:calc(100vh - 72px);display:flex;align-items:center;position:relative;overflow:hidden;padding:80px 48px;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 65% 50%,rgba(201,168,76,0.07) 0%,transparent 70%),linear-gradient(135deg,#0D0D0D 0%,#130F00 60%,#0D0D0D 100%);}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.035) 1px,transparent 1px);background-size:64px 64px;}
-.hero-content{position:relative;z-index:2;max-width:660px;}
+.hero-content{position:relative;z-index:3;max-width:660px;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.28);padding:6px 18px;font-size:11px;color:var(--gold);letter-spacing:3px;margin-bottom:36px;animation:fadeUp 0.7s ease both;}
 .hero-eyebrow::before{content:'';width:5px;height:5px;background:var(--gold);border-radius:50%;animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
@@ -39,11 +67,11 @@ h1.hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(36px,5.5vw,68px)
 h1.hero-title em{color:var(--gold);font-style:normal;}
 .hero-sub{font-size:15px;color:#aaa;line-height:2;margin-bottom:48px;font-weight:300;animation:fadeUp 0.7s 0.2s ease both;}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp 0.7s 0.3s ease both;}
-.btn-gold{background:var(--gold);color:var(--black);padding:15px 36px;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;border:none;transition:all 0.3s;letter-spacing:1px;font-family:'Noto Sans JP',sans-serif;}
+.btn-gold{background:var(--gold);color:var(--black);padding:15px 36px;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;border:none;transition:all 0.3s;letter-spacing:1px;font-family:sans-serif;}
 .btn-gold:hover{background:var(--gold2);transform:translateY(-2px);}
-.btn-outline{border:1px solid rgba(201,168,76,0.4);color:var(--gold);padding:15px 36px;font-size:14px;text-decoration:none;cursor:pointer;background:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;letter-spacing:1px;font-family:'Noto Sans JP',sans-serif;}
+.btn-outline{border:1px solid rgba(201,168,76,0.4);color:var(--gold);padding:15px 36px;font-size:14px;text-decoration:none;cursor:pointer;background:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;letter-spacing:1px;font-family:sans-serif;}
 .btn-outline:hover{border-color:var(--gold);background:rgba(201,168,76,0.07);}
-.hero-right{position:absolute;right:48px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:20px;z-index:2;animation:fadeLeft 0.7s 0.4s ease both;}
+.hero-right{position:absolute;right:48px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:20px;z-index:3;animation:fadeLeft 0.7s 0.4s ease both;}
 @keyframes fadeLeft{from{opacity:0;transform:translate(30px,-50%)}to{opacity:1;transform:translate(0,-50%)}}
 .kpi{background:rgba(255,255,255,0.025);border:1px solid var(--light-border);padding:22px 28px;text-align:center;min-width:155px;transition:border-color 0.3s;}
 .kpi:hover{border-color:var(--gold);}
@@ -60,10 +88,65 @@ h1.hero-title em{color:var(--gold);font-style:normal;}
 
 /* SERVICE CARDS */
 .srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px;}
-.srv-card{background:#111;padding:44px 32px;position:relative;overflow:hidden;transition:background 0.3s;}
+.srv-card{background:#111;padding:44px 32px;position:relative;overflow:hidden;transition:background 0.35s, transform 0.35s;}
 .srv-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;}
-.srv-card:hover{background:#161200;}
+.srv-card:hover{background:#161200;transform:translateY(-4px);}
 .srv-card:hover::after{transform:scaleX(1);}
+
+/* SVGアイコンボックス */
+.srv-icon-box{
+  width:52px;height:52px;
+  border:1px solid rgba(201,168,76,0.35);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:22px;
+  position:relative;
+  overflow:hidden;
+  transition:border-color 0.35s, box-shadow 0.35s;
+}
+.srv-icon-box::before{
+  content:'';position:absolute;inset:0;
+  background:rgba(201,168,76,0);
+  transition:background 0.35s;
+}
+.srv-card:hover .srv-icon-box{
+  border-color:var(--gold);
+  box-shadow:0 0 16px rgba(201,168,76,0.25),inset 0 0 12px rgba(201,168,76,0.06);
+}
+.srv-card:hover .srv-icon-box::before{
+  background:rgba(201,168,76,0.07);
+}
+.srv-icon-box svg{
+  transition:transform 0.35s ease;
+}
+.srv-card:hover .srv-icon-box svg{
+  transform:scale(1.15);
+}
+/* stroke描画アニメーション */
+.srv-icon-box svg path,
+.srv-icon-box svg polyline,
+.srv-icon-box svg polygon,
+.srv-icon-box svg circle,
+.srv-icon-box svg line,
+.srv-icon-box svg rect{
+  stroke-dasharray:200;
+  stroke-dashoffset:0;
+  transition:stroke-dashoffset 0.6s ease, stroke 0.35s;
+}
+.srv-card:hover .srv-icon-box svg path,
+.srv-card:hover .srv-icon-box svg polyline,
+.srv-card:hover .srv-icon-box svg polygon,
+.srv-card:hover .srv-icon-box svg circle,
+.srv-card:hover .srv-icon-box svg line,
+.srv-card:hover .srv-icon-box svg rect{
+  stroke:#F0C96A;
+  stroke-dashoffset:0;
+  animation:drawStroke 0.55s ease forwards;
+}
+@keyframes drawStroke{
+  from{stroke-dashoffset:200;}
+  to{stroke-dashoffset:0;}
+}
+
 .srv-icon{font-size:34px;margin-bottom:18px;display:block;}
 .srv-name{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;margin-bottom:10px;}
 .srv-desc{font-size:13px;color:#888;line-height:1.85;margin-bottom:16px;}
@@ -78,15 +161,18 @@ h1.hero-title em{color:var(--gold);font-style:normal;}
 .why-b{font-size:13px;color:#888;line-height:1.9;}
 
 /* CTA BAND */
-.cta-band{background:var(--gold);padding:80px 48px;text-align:center;position:relative;overflow:hidden;}
-.cta-band::before{content:'SUI';position:absolute;font-family:'Cormorant Garamond',serif;font-size:280px;font-weight:700;color:rgba(0,0,0,0.05);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;letter-spacing:20px;}
-.cta-band h2{font-family:'Noto Serif JP',serif;font-size:clamp(26px,4vw,46px);font-weight:900;color:var(--black);margin-bottom:16px;position:relative;}
-.cta-band p{font-size:15px;color:rgba(0,0,0,0.6);margin-bottom:40px;line-height:1.8;position:relative;}
+.cta-band{padding:80px 48px;text-align:center;position:relative;overflow:hidden;background:#0a0800;}
+.cta-band canvas.cta-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.cta-band::before{content:'SUI';position:absolute;font-family:'Cormorant Garamond',serif;font-size:280px;font-weight:700;color:rgba(201,168,76,0.09);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;letter-spacing:20px;z-index:0;}
+.cta-band>*:not(canvas):not(::before){position:relative;z-index:1;}
+.cta-band h2{font-family:'Noto Serif JP',serif;font-size:clamp(26px,4vw,46px);font-weight:900;color:var(--white);margin-bottom:16px;position:relative;}
+.cta-band p{font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:40px;line-height:1.8;position:relative;}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;}
-.btn-black{background:var(--black);color:var(--gold);padding:16px 44px;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s;font-family:'Noto Sans JP',sans-serif;letter-spacing:1px;}
+.btn-black{background:rgba(13,13,13,0.9);border:1px solid rgba(201,168,76,0.4);color:var(--gold);padding:16px 44px;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s;font-family:sans-serif;letter-spacing:1px;}
 .btn-black:hover{background:#1a1a1a;transform:translateY(-2px);}
-.btn-line-green{background:#06C755;color:#fff;padding:16px 44px;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s;font-family:'Noto Sans JP',sans-serif;letter-spacing:1px;}
-.btn-line-green:hover{background:#05b04a;transform:translateY(-2px);}
+.btn-line-green{background:#000;color:#06C755;padding:16px 44px;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid #06C755;display:inline-flex;align-items:center;gap:10px;transition:all 0.35s;font-family:sans-serif;letter-spacing:1px;position:relative;overflow:hidden;}
+.btn-line-green::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,199,85,0.12),rgba(255,255,255,0.06));pointer-events:none;}
+.btn-line-green:hover{background:#0a0a0a;border-color:#08e860;color:#08e860;transform:translateY(-2px);box-shadow:0 0 18px rgba(6,199,85,0.35);}
 
 /* ABOUT */
 .about-hero,.srv-hero,.contact-hero{background:linear-gradient(135deg,#0D0D0D,#130F00);padding:80px 48px;border-bottom:1px solid var(--light-border);}
@@ -113,11 +199,67 @@ h1.hero-title em{color:var(--gold);font-style:normal;}
 .srv-block:last-child{border-bottom:none;}
 .srv-block-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px;flex-wrap:wrap;gap:16px;}
 .srv-block-title{font-family:'Noto Serif JP',serif;font-size:26px;font-weight:700;}
-.srv-block-title span{display:block;font-size:12px;color:var(--gold);letter-spacing:2px;margin-bottom:6px;font-family:'Noto Sans JP',sans-serif;font-weight:400;}
+.srv-block-title span{display:block;font-size:12px;color:var(--gold);letter-spacing:2px;margin-bottom:6px;font-family:sans-serif;font-weight:400;}
 .price-tag{background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);padding:12px 24px;text-align:right;}
 .price-tag .p-main{font-size:20px;font-weight:700;color:var(--gold);line-height:1;}
 .price-tag .p-sub{font-size:11px;color:#666;margin-top:4px;}
 .srv-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+
+/* HOME PACKAGE SECTION */
+.home-pkg-section{padding:96px 48px;background:linear-gradient(180deg,#0D0D0D 0%,#0f0d00 50%,#0D0D0D 100%);position:relative;overflow:hidden;}
+.home-pkg-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 50%,rgba(201,168,76,0.06) 0%,transparent 70%);pointer-events:none;}
+.home-pkg-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;}
+.home-pkg-label{font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:14px;text-align:center;}
+.home-pkg-title{font-family:'Noto Serif JP',serif;font-size:clamp(28px,4vw,44px);font-weight:700;line-height:1.3;margin-bottom:16px;text-align:center;}
+.home-pkg-title em{color:var(--gold);font-style:normal;}
+.home-pkg-desc{font-size:14px;color:#999;line-height:2;text-align:center;margin-bottom:56px;}
+.home-pkg-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;}
+.home-pkg-card{background:#111;border:1px solid rgba(201,168,76,0.2);padding:44px 36px;position:relative;overflow:hidden;transition:border-color 0.35s,transform 0.35s;}
+.home-pkg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));}
+.home-pkg-card:hover{border-color:var(--gold);transform:translateY(-4px);}
+.home-pkg-card--featured{border-color:rgba(201,168,76,0.5);background:linear-gradient(145deg,#131000,#111);box-shadow:0 0 40px rgba(201,168,76,0.08);}
+.home-pkg-card-badge{display:inline-flex;align-items:center;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);padding:4px 14px;font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:12px;}
+.home-pkg-card-badge--best{background:rgba(201,168,76,0.2);border-color:var(--gold);}
+.home-pkg-card-includes{display:inline-flex;align-items:center;font-size:11px;color:var(--gold);background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);padding:5px 12px;margin-bottom:12px;}
+.home-pkg-card-name{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;margin-bottom:16px;}
+.home-pkg-card-price{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;color:var(--gold);line-height:1;margin-bottom:24px;}
+.home-pkg-card-price span{font-size:14px;color:#888;font-family:sans-serif;}
+.home-pkg-card-list{list-style:none;border-top:1px solid rgba(201,168,76,0.15);padding-top:20px;display:flex;flex-direction:column;gap:11px;margin-bottom:20px;}
+.home-pkg-card-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#bbb;line-height:1.6;}
+.home-pkg-card-list li::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;margin-top:6px;flex-shrink:0;}
+.home-pkg-card-note{font-size:11px;color:#555;line-height:1.8;}
+.home-pkg-cta-wrap{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+@media(max-width:768px){
+  .home-pkg-section{padding:60px 20px;}
+  .home-pkg-cards{grid-template-columns:1fr;}
+}
+
+/* PACKAGE SECTION */
+.pkg-section{padding:80px 48px;background:linear-gradient(180deg,#0D0D0D 0%,#100E00 50%,#0D0D0D 100%);}
+.pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;}
+.pkg-card{position:relative;background:#111;border:1px solid rgba(201,168,76,0.18);padding:44px 36px;overflow:hidden;transition:border-color 0.35s,transform 0.35s;}
+.pkg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));}
+.pkg-card:hover{border-color:var(--gold);transform:translateY(-4px);}
+.pkg-card.featured{border-color:rgba(201,168,76,0.45);background:linear-gradient(145deg,#131000,#111);}
+.pkg-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);padding:4px 14px;font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:20px;}
+.pkg-badge.best{background:rgba(201,168,76,0.2);border-color:var(--gold);}
+.pkg-name{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;margin-bottom:8px;}
+.pkg-price-wrap{margin:20px 0 28px;}
+.pkg-price{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:var(--gold);line-height:1;}
+.pkg-price-sub{font-size:12px;color:#666;margin-top:6px;letter-spacing:1px;}
+.pkg-divider{width:100%;height:1px;background:rgba(201,168,76,0.15);margin-bottom:24px;}
+.pkg-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+.pkg-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#bbb;line-height:1.7;}
+.pkg-list li::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;margin-top:6px;flex-shrink:0;}
+.pkg-list li strong{color:var(--white);}
+.pkg-note{font-size:11px;color:#555;line-height:1.8;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;}
+.pkg-cta{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--black);padding:14px 28px;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;border:none;font-family:sans-serif;transition:all 0.3s;margin-top:8px;width:100%;justify-content:center;}
+.pkg-cta:hover{background:var(--gold2);}
+.pkg-includes{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--gold);background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);padding:6px 14px;margin-bottom:16px;}
+@media(max-width:768px){
+  .pkg-grid{grid-template-columns:1fr;}
+  .pkg-section{padding:60px 20px;}
+}
 .srv-detail-item{background:#111;padding:24px 28px;border-left:2px solid var(--gold);}
 .srv-detail-item h4{font-size:14px;font-weight:700;color:var(--gold2);margin-bottom:8px;}
 .srv-detail-item p{font-size:13px;color:#888;line-height:1.8;}
@@ -128,19 +270,19 @@ h1.hero-title em{color:var(--gold);font-style:normal;}
 .contact-item-icon{width:44px;height:44px;background:rgba(201,168,76,0.1);border:1px solid var(--light-border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
 .contact-item-text h4{font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:4px;}
 .contact-item-text p{font-size:14px;color:#ccc;line-height:1.6;}
-.line-cta{background:#06C755;padding:28px;text-align:center;margin-top:28px;}
-.line-cta p{font-size:13px;color:rgba(255,255,255,0.85);margin-bottom:12px;}
-.line-cta a{background:#fff;color:#06C755;padding:12px 28px;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;}
-.line-cta a:hover{background:#f0f0f0;}
+.line-cta{background:#050f08;border:1px solid rgba(6,199,85,0.3);padding:36px 28px;text-align:center;margin-top:28px;position:relative;overflow:hidden;}
+.line-cta p{font-size:13px;color:rgba(255,255,255,0.85);margin-bottom:14px;font-weight:500;letter-spacing:0.5px;}
+.line-cta a{background:#000;color:#06C755;padding:13px 30px;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.35s;border:1px solid rgba(6,199,85,0.5);box-shadow:0 0 12px rgba(6,199,85,0.12);}
+.line-cta a:hover{background:#030f06;border-color:#06C755;box-shadow:0 0 20px rgba(6,199,85,0.3);transform:translateY(-1px);}
 .form-wrap{background:#111;padding:40px;}
 .form-wrap h3{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;margin-bottom:28px;color:var(--gold2);}
 .form-group{margin-bottom:20px;}
 .form-group label{display:block;font-size:12px;color:var(--gold);letter-spacing:1px;margin-bottom:8px;}
-.form-group input,.form-group select,.form-group textarea{width:100%;background:#0D0D0D;border:1px solid #2a2a2a;color:var(--white);padding:12px 16px;font-size:14px;font-family:'Noto Sans JP',sans-serif;outline:none;transition:border-color 0.3s;resize:vertical;}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:#0D0D0D;border:1px solid #2a2a2a;color:var(--white);padding:12px 16px;font-size:14px;font-family:sans-serif;outline:none;transition:border-color 0.3s;resize:vertical;}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);}
 .form-group select{appearance:none;cursor:pointer;}
 .form-group textarea{min-height:120px;}
-.form-submit{background:var(--gold);color:var(--black);border:none;padding:14px 40px;font-size:14px;font-weight:700;cursor:pointer;width:100%;font-family:'Noto Sans JP',sans-serif;letter-spacing:1px;transition:all 0.3s;margin-top:8px;}
+.form-submit{background:var(--gold);color:var(--black);border:none;padding:14px 40px;font-size:14px;font-weight:700;cursor:pointer;width:100%;font-family:sans-serif;letter-spacing:1px;transition:all 0.3s;margin-top:8px;}
 .form-submit:hover{background:var(--gold2);}
 .form-note{font-size:11px;color:#555;margin-top:12px;line-height:1.7;}
 
@@ -150,28 +292,474 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
 .footer-info{font-size:12px;color:#444;line-height:1.8;}
 .footer-copy{font-size:11px;color:#333;}
 
+/* GLOBAL FIREWORK OVERLAY */
+#global-fw-canvas{position:fixed;inset:0;z-index:8888;pointer-events:none;width:100%;height:100%;}
+/* CUSTOM CURSOR */
+#sui-cursor{position:fixed;width:12px;height:12px;border-radius:50%;background:rgba(201,168,76,0.9);pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform 0.1s ease,width 0.2s ease,height 0.2s ease,opacity 0.2s ease;mix-blend-mode:screen;box-shadow:0 0 10px rgba(201,168,76,0.6),0 0 20px rgba(201,168,76,0.3);}
+#sui-cursor-trail{position:fixed;width:32px;height:32px;border-radius:50%;border:1px solid rgba(201,168,76,0.35);pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:left 0.12s ease,top 0.12s ease,width 0.2s ease,height 0.2s ease,opacity 0.2s ease;}
+body:hover #sui-cursor{opacity:1;}
+
+/* SCROLL CTA */
+#scroll-cta{position:fixed;bottom:100px;right:28px;z-index:7000;opacity:0;transform:translateY(20px);transition:opacity 0.4s ease,transform 0.4s ease;pointer-events:none;}
+#scroll-cta.visible{opacity:1;transform:translateY(0);pointer-events:auto;}
+#scroll-cta button{background:var(--gold);color:var(--black);border:none;padding:13px 20px;font-size:12px;font-weight:700;font-family:sans-serif;cursor:pointer;letter-spacing:1px;display:flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(201,168,76,0.4);transition:all 0.3s;}
+#scroll-cta button:hover{background:var(--gold2);transform:translateY(-2px);}
+#scroll-cta-label{font-size:10px;color:rgba(201,168,76,0.7);text-align:center;margin-top:6px;letter-spacing:2px;}
+
+/* CHAT WIDGET */
+#chat-widget{position:fixed;bottom:28px;right:28px;z-index:7001;}
+#chat-btn{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#06C755,#04a344);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(6,199,85,0.4);transition:all 0.3s;position:relative;}
+#chat-btn:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(6,199,85,0.55);}
+#chat-btn-pulse{position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(6,199,85,0.4);animation:chatPulse 2s infinite;}
+@keyframes chatPulse{0%,100%{transform:scale(1);opacity:0.8}50%{transform:scale(1.18);opacity:0}}
+#chat-panel{position:absolute;bottom:68px;right:0;width:280px;background:#111;border:1px solid rgba(201,168,76,0.25);overflow:hidden;opacity:0;transform:translateY(10px) scale(0.95);transition:all 0.3s ease;pointer-events:none;transform-origin:bottom right;}
+#chat-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+#chat-header{background:linear-gradient(135deg,#0a0a0a,#1a1400);padding:14px 18px;border-bottom:1px solid rgba(201,168,76,0.15);}
+#chat-header-title{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold);}
+#chat-header-sub{font-size:10px;color:#666;margin-top:2px;letter-spacing:1px;}
+#chat-body{padding:16px;}
+.chat-q{font-size:12px;color:#aaa;margin-bottom:10px;line-height:1.6;}
+.chat-opts{display:flex;flex-direction:column;gap:7px;}
+.chat-opt{background:#1a1a1a;border:1px solid rgba(201,168,76,0.2);color:#ccc;padding:9px 14px;font-size:12px;cursor:pointer;text-align:left;font-family:sans-serif;transition:all 0.25s;display:flex;align-items:center;gap:8px;}
+.chat-opt:hover{background:#1f1800;border-color:var(--gold);color:var(--gold);}
+.chat-opt-icon{color:var(--gold);font-size:11px;flex-shrink:0;}
+
+/* SIMULATOR */
+.sim-section{padding:80px 48px;background:#0A0A0A;}
+.sim-box{background:#111;border:1px solid rgba(201,168,76,0.2);padding:48px;max-width:780px;margin:0 auto;}
+.sim-row{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.sim-label{font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:10px;display:block;}
+.sim-btn{background:#1a1a1a;border:1px solid #333;color:#888;padding:9px 18px;font-size:13px;cursor:pointer;font-family:sans-serif;transition:all 0.25s;white-space:nowrap;}
+.sim-btn.active{background:#1f1800;border-color:var(--gold);color:var(--gold);}
+.sim-btn:hover{border-color:rgba(201,168,76,0.5);color:#bbb;}
+.sim-result{margin-top:32px;padding:28px;background:#0d0d0d;border:1px solid rgba(201,168,76,0.15);text-align:center;}
+.sim-price{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,60px);color:var(--gold);font-weight:600;line-height:1;}
+.sim-price-label{font-size:12px;color:#666;margin-top:6px;letter-spacing:1px;}
+.sim-note{font-size:11px;color:#555;margin-top:14px;line-height:1.7;}
+.sim-cta-row{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap;}
+
+/* FLOW */
+.flow-section{padding:80px 48px;background:#080808;}
+.flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:48px;position:relative;}
+.flow-grid::before{content:'';position:absolute;top:36px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.3),rgba(201,168,76,0.6),rgba(201,168,76,0.3),transparent);}
+.flow-step{text-align:center;padding:0 12px;position:relative;}
+.flow-icon{width:72px;height:72px;border:1px solid rgba(201,168,76,0.35);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;background:#0d0d0d;position:relative;z-index:1;transition:all 0.3s;}
+.flow-step:hover .flow-icon{border-color:var(--gold);box-shadow:0 0 20px rgba(201,168,76,0.2);}
+.flow-num{position:absolute;top:-8px;right:-8px;width:22px;height:22px;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.flow-title{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.flow-desc{font-size:11px;color:#666;line-height:1.7;}
+
+/* FAQ */
+.faq-section{padding:80px 48px;background:#0A0A0A;}
+.faq-list{max-width:760px;margin:48px auto 0;}
+.faq-item{border-bottom:1px solid rgba(201,168,76,0.1);overflow:hidden;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;gap:16px;}
+.faq-q-text{font-size:15px;color:var(--white);font-weight:500;line-height:1.5;}
+.faq-q-icon{width:28px;height:28px;border:1px solid rgba(201,168,76,0.35);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.3s;color:var(--gold);font-size:16px;}
+.faq-item.open .faq-q-icon{transform:rotate(45deg);border-color:var(--gold);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s ease;}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:22px;}
+.faq-a-text{font-size:13px;color:#999;line-height:2;padding-left:0;}
+.faq-a-text em{color:var(--gold);font-style:normal;}
+
+/* STATS SECTION */
+.stats-section{padding:64px 48px;background:#0A0A0A;border-top:1px solid rgba(201,168,76,0.08);}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.stat-card{background:#111;padding:36px 24px;text-align:center;position:relative;overflow:hidden;transition:background 0.3s;}
+.stat-card:hover{background:#161200;}
+.stat-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;}
+.stat-card:hover::after{transform:scaleX(1);}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,58px);font-weight:600;color:var(--gold);line-height:1;margin-bottom:8px;}
+.stat-unit{font-size:16px;color:var(--gold2);}
+.stat-label{font-size:11px;color:#666;letter-spacing:2px;}
+
+/* TESTIMONIALS */
+.testimonials-section{padding:80px 48px;background:#080808;overflow:hidden;}
+.testimonials-track{display:flex;gap:20px;width:max-content;animation:slideTrack 28s linear infinite;}
+.testimonials-track:hover{animation-play-state:paused;}
+@keyframes slideTrack{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.testi-card{background:#111;border:1px solid rgba(201,168,76,0.12);padding:28px 24px;width:300px;flex-shrink:0;transition:border-color 0.3s;}
+.testi-card:hover{border-color:rgba(201,168,76,0.4);}
+.testi-stars{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:12px;}
+.testi-text{font-size:13px;color:#aaa;line-height:1.9;margin-bottom:16px;}
+.testi-name{font-size:11px;color:var(--gold);letter-spacing:2px;}
+.testi-role{font-size:10px;color:#555;margin-top:2px;}
+
+/* PROGRESS BAR */
+#progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:9998;width:0;transition:width 0.1s linear;pointer-events:none;}
+
+/* GLITCH TEXT */
+@keyframes glitchClip1{0%,100%{clip-path:inset(0 0 95% 0)}20%{clip-path:inset(20% 0 60% 0)}40%{clip-path:inset(50% 0 30% 0)}60%{clip-path:inset(70% 0 10% 0)}}
+@keyframes glitchClip2{0%,100%{clip-path:inset(80% 0 0 0)}20%{clip-path:inset(60% 0 20% 0)}40%{clip-path:inset(30% 0 50% 0)}60%{clip-path:inset(10% 0 70% 0)}}
+@keyframes glitchShift{0%,100%{transform:translate(0)}25%{transform:translate(-3px,1px)}50%{transform:translate(3px,-1px)}75%{transform:translate(-2px,2px)}}
+.glitch-wrap{position:relative;display:inline-block;}
+.glitch-wrap::before,.glitch-wrap::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;pointer-events:none;opacity:0;}
+.glitch-wrap.glitching::before{opacity:0.8;color:#F0C96A;animation:glitchClip1 0.4s steps(1) both,glitchShift 0.4s ease both;text-shadow:2px 0 #C9A84C;}
+.glitch-wrap.glitching::after{opacity:0.8;color:#fff;animation:glitchClip2 0.4s steps(1) 0.05s both,glitchShift 0.4s ease 0.05s both;text-shadow:-2px 0 rgba(255,255,255,0.5);}
+
+/* CARD TILT */
+.tilt-card{transform-style:preserve-3d;transition:transform 0.1s ease;}
+.tilt-shine{position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,0.12),transparent 60%);transition:opacity 0.3s;}
+.tilt-card:hover .tilt-shine{opacity:1;}
+
+/* MAGNETIC BTN */
+.magnetic{display:inline-flex;transition:transform 0.3s cubic-bezier(0.23,1,0.32,1);}
+
+/* SPOTLIGHT */
+#spotlight{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(circle 280px at -999px -999px,rgba(201,168,76,0.06) 0%,transparent 70%);transition:background 0.08s linear;}
+
+/* TYPING CURSOR */
+.typing-cursor{display:inline-block;width:2px;height:0.85em;background:var(--gold);margin-left:2px;vertical-align:middle;animation:cursorBlink 0.8s step-end infinite;}
+@keyframes cursorBlink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* PARALLAX */
+.parallax-layer{will-change:transform;}
+
+/* SECTION BOUNCE */
+.bounce-in{opacity:0;transform:translateY(40px);transition:opacity 0.6s ease,transform 0.7s cubic-bezier(0.34,1.56,0.64,1);}
+.bounce-in.visible{opacity:1;transform:translateY(0);}
+
+/* FILM COUNTDOWN */
+#film-countdown{position:fixed;inset:0;z-index:9600;pointer-events:none;display:flex;align-items:center;justify-content:center;opacity:0;}
+#film-countdown canvas{position:absolute;inset:0;width:100%;height:100%;}
+#film-num{position:relative;z-index:1;font-family:'Courier New',Courier,monospace;font-size:clamp(120px,20vw,220px);font-weight:700;color:#fff;line-height:1;text-shadow:0 0 40px rgba(201,168,76,0.8);letter-spacing:-0.05em;font-variant-numeric:tabular-nums;}
+#film-scratch{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 3px,rgba(255,255,255,0.015) 3px,rgba(255,255,255,0.015) 4px);pointer-events:none;}
+
+/* CINESCOPE BARS */
+#cine-top,#cine-bottom{position:fixed;left:0;right:0;z-index:6000;pointer-events:none;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);}
+#cine-top{top:0;height:60px;background:#000;transform:translateY(-100%);}
+#cine-bottom{bottom:0;height:60px;background:#000;transform:translateY(100%);}
+body.cine-mode #cine-top{transform:translateY(0);}
+body.cine-mode #cine-bottom{transform:translateY(0);}
+
+/* MATRIX CANVAS */
+#matrix-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity 1s ease;}
+#matrix-canvas.visible{opacity:0.07;}
+
+/* DEVICE MOCKUP */
+.device-mockup{position:relative;display:inline-block;margin:0 auto;}
+.device-frame{width:220px;border:2px solid rgba(201,168,76,0.4);border-radius:28px;background:#0a0a0a;padding:12px 8px;box-shadow:0 0 40px rgba(201,168,76,0.1),0 20px 60px rgba(0,0,0,0.5);position:relative;}
+.device-notch{width:60px;height:8px;background:#1a1a1a;border-radius:4px;margin:0 auto 10px;}
+.device-screen{background:#111;border-radius:18px;overflow:hidden;height:340px;position:relative;}
+.device-btn{width:3px;height:40px;background:rgba(201,168,76,0.3);border-radius:2px;position:absolute;right:-5px;top:80px;}
+
+/* DASHBOARD */
+.dash-section{padding:80px 48px;background:#080808;}
+.dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
+.dash-card{background:#111;border:1px solid rgba(201,168,76,0.1);padding:24px;position:relative;overflow:hidden;}
+.dash-card-label{font-size:10px;color:#555;letter-spacing:2px;margin-bottom:8px;}
+.dash-card-val{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--gold);font-weight:600;line-height:1;margin-bottom:12px;}
+.dash-bar-wrap{height:4px;background:#1a1a1a;border-radius:2px;overflow:hidden;}
+.dash-bar{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));width:0;border-radius:2px;transition:width 1.4s cubic-bezier(0.4,0,0.2,1);}
+.dash-sparkline{position:absolute;bottom:0;right:0;opacity:0.3;}
+
+
+/* EXIT POPUP */
+#exit-popup{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);}
+#exit-popup.show{display:flex;animation:fadeIn 0.3s ease;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+#exit-popup-box{background:#0d0d0d;border:1px solid rgba(201,168,76,0.35);padding:48px 40px;max-width:480px;width:90%;text-align:center;position:relative;}
+#exit-popup-close{position:absolute;top:14px;right:18px;background:none;border:none;color:#555;font-size:22px;cursor:pointer;line-height:1;}
+#exit-popup-close:hover{color:var(--gold);}
+.exit-popup-badge{display:inline-block;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:var(--gold);font-size:10px;letter-spacing:3px;padding:4px 14px;margin-bottom:20px;}
+.exit-popup-title{font-family:'Noto Serif JP',serif;font-size:clamp(20px,3.5vw,28px);font-weight:900;color:var(--white);margin-bottom:12px;line-height:1.3;}
+.exit-popup-sub{font-size:13px;color:#888;line-height:1.9;margin-bottom:28px;}
+.exit-popup-btns{display:flex;flex-direction:column;gap:10px;}
+.exit-popup-btns a,.exit-popup-btns button{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;font-family:sans-serif;transition:all 0.3s;}
+
+/* MEDIA LOGOS */
+.media-section{padding:40px 48px;background:#0A0A0A;border-top:1px solid rgba(201,168,76,0.06);border-bottom:1px solid rgba(201,168,76,0.06);overflow:hidden;}
+.media-track{display:flex;gap:48px;width:max-content;animation:mediaScroll 20s linear infinite;align-items:center;}
+.media-track:hover{animation-play-state:paused;}
+@keyframes mediaScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.media-logo{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,0.2);letter-spacing:3px;white-space:nowrap;transition:color 0.3s;}
+.media-logo:hover{color:rgba(201,168,76,0.6);}
+
+/* VISITOR COUNTER */
+#visitor-bar{position:fixed;bottom:0;left:0;right:0;z-index:6999;background:rgba(13,13,13,0.95);backdrop-filter:blur(10px);border-top:1px solid rgba(201,168,76,0.12);padding:8px 24px;display:flex;align-items:center;gap:20px;transform:translateY(100%);transition:transform 0.5s ease;}
+#visitor-bar.show{transform:translateY(0);}
+.visitor-dot{width:7px;height:7px;background:#4ade80;border-radius:50%;animation:visitorPulse 2s infinite;}
+@keyframes visitorPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+.visitor-text{font-size:11px;color:#888;letter-spacing:1px;}
+.visitor-count{color:var(--gold);font-weight:700;}
+#visitor-close{margin-left:auto;background:none;border:none;color:#444;cursor:pointer;font-size:16px;padding:0 4px;}
+
+
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(36px);transition:opacity 0.65s ease,transform 0.65s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal.vis{opacity:1;transform:translateY(0);}
 
+/* SUB HERO ANIMATION */
+.sub-hero{position:relative;overflow:hidden;}
+.sub-hero-scanlines{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0.06;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.6) 2px,rgba(0,0,0,0.6) 4px);}
+
+/* INTRO OVERLAY */
+#intro-overlay{
+  position:fixed;inset:0;z-index:9999;
+  background:#000;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+#intro-canvas{position:absolute;inset:0;width:100%;height:100%;}
+#intro-logo{
+  position:relative;z-index:2;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(72px,14vw,160px);
+  font-weight:600;
+  letter-spacing:20px;
+  color:var(--gold);
+  opacity:0;
+  transform:scale(0.85);
+  text-shadow:0 0 60px rgba(201,168,76,0.5),0 0 120px rgba(201,168,76,0.2);
+  transition:none;
+  will-change:transform,opacity;
+}
+#intro-tagline{
+  position:absolute;
+  bottom:20%;left:50%;transform:translateX(-50%);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(11px,1.2vw,15px);
+  letter-spacing:6px;
+  color:rgba(201,168,76,0.6);
+  opacity:0;
+  white-space:nowrap;
+  z-index:2;
+}
+
 /* MOBILE */
+/* ══════════════ MOBILE ══════════════ */
 @media(max-width:768px){
-  nav{padding:14px 20px;}
+  /* ナビ */
+  nav{padding:12px 16px;}
   .nav-links{display:none;}
-  .hero{padding:60px 20px;}
+  .nav-logo{font-size:20px;letter-spacing:3px;}
+  .nav-cta{padding:8px 14px;font-size:11px;}
+
+  /* ヒーロー */
+  .hero{padding:48px 16px 60px;}
   .hero-right{display:none;}
-  .home-section,.about-body,.srv-body,.contact-body{padding:60px 20px;}
-  .about-hero,.srv-hero,.contact-hero,.cta-band{padding:60px 20px;}
-  .srv-grid,.why-grid,.about-grid,.srv-detail-grid,.contact-grid{grid-template-columns:1fr;}
-  footer{flex-direction:column;text-align:center;padding:32px 20px;}
-  .srv-block-header{flex-direction:column;}
+  h1.hero-title{font-size:clamp(28px,8vw,44px);}
+  .hero-sub{font-size:13px;}
+  .hero-btns{flex-direction:column;gap:10px;}
+  .btn-gold,.btn-outline{width:100%;justify-content:center;padding:14px 20px;}
+
+  /* セクション共通 */
+  .home-section,.about-body,.srv-body,.contact-body{padding:48px 16px;}
+  .about-hero,.srv-hero,.contact-hero{padding:48px 16px;}
+  .cta-band{padding:56px 16px;}
+
+  /* サービスカード */
+  .srv-grid{grid-template-columns:1fr;gap:2px;}
+  .srv-card{padding:32px 20px;}
+
+  /* WHY */
+  .why-grid{grid-template-columns:1fr;}
+  .why-card{padding:28px 20px;}
+  .why-n{font-size:38px;}
+
+  /* 統計 */
+  .stats-section{padding:48px 16px;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:2px;}
+  .stat-card{padding:24px 12px;}
+  .stat-num{font-size:clamp(28px,7vw,44px);}
+
+  /* VOICE */
+  .testimonials-section{padding:48px 0;}
+  .testi-card{width:260px;padding:20px 16px;}
+
+  /* フロー */
+  .flow-section{padding:48px 16px;}
+  .flow-grid{grid-template-columns:1fr;gap:20px;padding:0;}
+  .flow-grid::before{display:none;}
+  .flow-step{display:flex;align-items:flex-start;gap:16px;text-align:left;padding:0;}
+  .flow-icon{width:52px;height:52px;flex-shrink:0;margin:0;}
+  .flow-title{margin-bottom:4px;}
+
+  /* シミュレーター */
+  .sim-section{padding:48px 16px;}
+  .sim-box{padding:20px 14px;}
+  .sim-row{gap:8px;}
+  .sim-btn{padding:8px 12px;font-size:12px;}
+  .sim-price{font-size:clamp(28px,8vw,48px);}
+  .sim-cta-row{flex-direction:column;}
+  .sim-cta-row .btn-line-green,
+  .sim-cta-row .btn-outline{width:100%;justify-content:center;}
+
+  /* FAQ */
+  .faq-section{padding:48px 16px;}
+  .faq-q-text{font-size:13px;}
+
+  /* 会社概要 */
+  .about-grid{grid-template-columns:1fr;gap:32px;}
   #rep-grid{grid-template-columns:1fr !important;}
+  .rep-card{flex-direction:column;align-items:flex-start;}
+  #port-grid{grid-template-columns:1fr !important;}
+
+  /* サービスページ */
+  .srv-block-header{flex-direction:column;gap:12px;}
+  .srv-detail-grid{grid-template-columns:1fr;}
+
+  /* お問い合わせ */
+  .contact-grid{grid-template-columns:1fr;}
+  .form-wrap{padding:24px 16px;}
+
+  /* フッター */
+  footer{flex-direction:column;text-align:center;padding:32px 16px;gap:12px;}
+  .footer-info{font-size:11px;}
+
+  /* チャットウィジェット */
+  #chat-widget{bottom:16px;right:16px;}
+  #chat-panel{width:calc(100vw - 32px);right:0;}
+  #scroll-cta{bottom:82px;right:16px;}
+  #scroll-cta button{padding:10px 14px;font-size:11px;}
+
+  /* カーソル非表示（タッチデバイス不要） */
+  #sui-cursor,#sui-cursor-trail{display:none;}
+
+  /* KPI非表示（ヒーロー右側） */
+  .kpi{min-width:120px;}
+
+  /* ダッシュボード */
+  .dash-section{padding:48px 16px;}
+  .dash-grid{grid-template-columns:1fr;}
+
+  /* メディアバナー */
+  .media-section{padding:32px 0;}
+
+  /* 離脱ポップアップ */
+  #exit-popup-box{padding:32px 20px;}
+
+  /* 訪問者バー */
+  #visitor-bar{padding:6px 12px;flex-wrap:wrap;gap:8px;}
+  .visitor-text{font-size:10px;}
+}
+
+/* 小さいスマホ（375px以下） */
+@media(max-width:375px){
+  h1.hero-title{font-size:26px;}
+  .stats-grid{grid-template-columns:1fr;}
+  .dash-grid{grid-template-columns:1fr;}
+  .sim-btn{padding:7px 10px;font-size:11px;}
+  .nav-cta{display:none;}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "株式会社粋（SUI）",
+  "description": "動画制作・YouTube編集・WEB制作・アプリ開発をワンストップで。累計1,000本以上の実績。",
+  "url": "https://sui-creative.com",
+  "telephone": "080-7219-4567",
+  "email": "suiincorporated0107@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "中2-9-32 グランメール国立203",
+    "addressLocality": "国立市",
+    "addressRegion": "東京都",
+    "postalCode": "186-0004",
+    "addressCountry": "JP"
+  },
+  "priceRange": "¥10,000〜",
+  "openingHours": "Mo-Sa 09:00-21:00",
+  "sameAs": ["https://line.me/ti/p/9615727302"]
+}
+</script>
 </head>
 <body>
+
+<!-- 離脱防止ポップアップ -->
+<div id="exit-popup">
+  <div id="exit-popup-box">
+    <button id="exit-popup-close" onclick="closeExitPopup()">×</button>
+    <div class="exit-popup-badge">LIMITED OFFER</div>
+    <div class="exit-popup-title">まだ諦めないでください</div>
+    <p class="exit-popup-sub">
+      初回のご相談は<strong style="color:var(--gold);">完全無料</strong>です。<br>
+      予算・本数・方向性など、どんな段階でも<br>
+      お気軽にご連絡ください。
+    </p>
+    <div class="exit-popup-btns">
+      <a href="https://line.me/ti/p/9615727302" target="_blank" style="background:#06C755;color:#fff;border:none;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        LINEで無料相談する
+      </a>
+      <button onclick="closeExitPopup();showPage('contact');" style="background:transparent;border:1px solid rgba(201,168,76,0.4);color:var(--gold);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        フォームで相談する
+      </button>
+      <button onclick="closeExitPopup()" style="background:none;border:none;color:#444;font-size:11px;padding:6px;">今は結構です</button>
+    </div>
+  </div>
+</div>
+
+<!-- 訪問者バー -->
+<div id="visitor-bar">
+  <div class="visitor-dot"></div>
+  <span class="visitor-text">現在 <span class="visitor-count" id="visitor-num">3</span> 人が閲覧中</span>
+  <span class="visitor-text" style="margin-left:8px;">今月の相談件数：<span class="visitor-count" id="consult-num">12</span> 件</span>
+  <button id="visitor-close" onclick="document.getElementById('visitor-bar').classList.remove('show')">×</button>
+</div>
+
+<div id="spotlight"></div>
+<canvas id="global-fw-canvas"></canvas>
+<!-- シネスコバー -->
+<div id="cine-top"></div>
+<div id="cine-bottom"></div>
+<!-- フィルムカウントダウン -->
+<div id="film-countdown">
+  <canvas id="film-cv"></canvas>
+  <div id="film-scratch"></div>
+  <div id="film-num">3</div>
+</div>
+<!-- マトリックスキャンバス -->
+<canvas id="matrix-canvas"></canvas>
+<!-- プログレスバー -->
+<div id="progress-bar"></div>
+<!-- カスタムカーソル -->
+<div id="sui-cursor"></div>
+<div id="sui-cursor-trail"></div>
+<!-- スクロール追従CTA -->
+<div id="scroll-cta">
+  <button onclick="showPage('contact')">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    無料相談する
+  </button>
+  <div id="scroll-cta-label">FREE</div>
+</div>
+<!-- チャットウィジェット -->
+<div id="chat-widget">
+  <div id="chat-panel">
+    <div id="chat-header">
+      <div id="chat-header-title">SUIに相談する</div>
+      <div id="chat-header-sub">通常1〜2時間以内に返信</div>
+    </div>
+    <div id="chat-body">
+      <div class="chat-q">どのようなご相談ですか？</div>
+      <div class="chat-opts">
+        <button class="chat-opt" onclick="chatGo('video')"><span class="chat-opt-icon">▶</span>動画制作について</button>
+        <button class="chat-opt" onclick="chatGo('web')"><span class="chat-opt-icon">◎</span>WEB・アプリ開発について</button>
+        <button class="chat-opt" onclick="chatGo('sns')"><span class="chat-opt-icon">◈</span>SNS運用について</button>
+        <button class="chat-opt" onclick="chatGo('price')"><span class="chat-opt-icon">¥</span>料金・見積もりを聞きたい</button>
+        <button class="chat-opt" onclick="chatGo('other')"><span class="chat-opt-icon">→</span>その他のご相談</button>
+      </div>
+    </div>
+  </div>
+  <button id="chat-btn" onclick="toggleChat()">
+    <div id="chat-btn-pulse"></div>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </button>
+</div>
+<!-- ページ遷移ワイプ -->
+<canvas id="transition-canvas" style="position:fixed;inset:0;z-index:9500;pointer-events:none;width:100%;height:100%;opacity:0;"></canvas>
+<!-- ══════════════ INTRO OVERLAY ══════════════ -->
+<div id="intro-overlay">
+  <canvas id="intro-canvas"></canvas>
+  <div id="intro-logo">SUI</div>
+  <div id="intro-tagline">映像の力で、企業の価値を最大化する</div>
+</div>
 
 <nav>
   <a class="nav-logo" onclick="showPage('home')">SUI</a>
@@ -183,23 +771,49 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
     <li><a onclick="showPage('contact')" id="nav-contact">お問い合わせ</a></li>
   </ul>
   <a class="nav-cta" onclick="showPage('contact')">無料相談する</a>
+  <button id="nav-hamburger" onclick="toggleMobileNav()" style="display:none;background:none;border:1px solid rgba(201,168,76,0.4);padding:7px 10px;cursor:pointer;flex-direction:column;gap:4px;align-items:center;justify-content:center;">
+    <span style="display:block;width:20px;height:1.5px;background:var(--gold);transition:all 0.3s;" id="hb-1"></span>
+    <span style="display:block;width:20px;height:1.5px;background:var(--gold);transition:all 0.3s;" id="hb-2"></span>
+    <span style="display:block;width:20px;height:1.5px;background:var(--gold);transition:all 0.3s;" id="hb-3"></span>
+  </button>
 </nav>
+<!-- モバイルナビ -->
+<div id="mobile-nav" style="display:none;position:fixed;top:56px;left:0;right:0;background:rgba(13,13,13,0.98);backdrop-filter:blur(20px);z-index:199;border-bottom:1px solid rgba(201,168,76,0.2);padding:16px 0;">
+  <ul style="list-style:none;">
+    <li><a onclick="mobileNavGo('home')" style="display:block;padding:14px 24px;color:#aaa;font-size:14px;letter-spacing:1px;border-bottom:1px solid rgba(255,255,255,0.05);cursor:pointer;">ホーム</a></li>
+    <li><a onclick="mobileNavGo('about')" style="display:block;padding:14px 24px;color:#aaa;font-size:14px;letter-spacing:1px;border-bottom:1px solid rgba(255,255,255,0.05);cursor:pointer;">会社概要</a></li>
+    <li><a onclick="mobileNavGo('service')" style="display:block;padding:14px 24px;color:#aaa;font-size:14px;letter-spacing:1px;border-bottom:1px solid rgba(255,255,255,0.05);cursor:pointer;">サービス</a></li>
+    <li><a onclick="mobileNavGo('portfolio')" style="display:block;padding:14px 24px;color:#aaa;font-size:14px;letter-spacing:1px;border-bottom:1px solid rgba(255,255,255,0.05);cursor:pointer;">実績</a></li>
+    <li><a onclick="mobileNavGo('contact')" style="display:block;padding:14px 24px;color:#aaa;font-size:14px;letter-spacing:1px;cursor:pointer;">お問い合わせ</a></li>
+  </ul>
+  <div style="padding:16px 24px;">
+    <a href="https://line.me/ti/p/9615727302" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#06C755;color:#fff;padding:13px;font-size:14px;font-weight:700;text-decoration:none;border:1px solid #06C755;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      LINEで無料相談
+    </a>
+  </div>
+</div>
 
 <!-- ══════════════ HOME ══════════════ -->
 <div id="page-home" class="page active">
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
+    <!-- 映像演出レイヤー -->
+    <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0.85;"></canvas>
+    <div id="hero-scanlines" style="position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.07;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.6) 2px,rgba(0,0,0,0.6) 4px);"></div>
+    <div id="hero-noise" style="position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;mix-blend-mode:overlay;"></div>
+    <div id="hero-vignette" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 80% 80% at 50% 50%,transparent 40%,rgba(0,0,0,0.65) 100%);"></div>
     <div class="hero-content">
       <div class="hero-eyebrow">株式会社粋（SUI）</div>
-      <h1 class="hero-title">映像の力で、<br><em>企業の価値</em>を<br>最大化する。</h1>
-      <p class="hero-sub">
-        動画制作からWEB・アプリ開発まで、<br>
-        成果に直結するクリエイティブをワンストップで。<br>
-        単発1本から月額継続まで、まずはお気軽にご相談ください。
-      </p>
+      <h1 class="hero-title">
+  <span class="glitch-wrap" data-text="映像の力で、">映像の力で、</span><br>
+  <em><span class="glitch-wrap" data-text="企業の価値を">企業の価値を</span></em><br>
+  <span class="glitch-wrap" data-text="最大化する">最大化する</span>
+</h1>
+      <p class="hero-sub" id="hero-typing"></p>
       <div class="hero-btns">
-        <button class="btn-gold" onclick="showPage('contact')">📩 無料相談する →</button>
+        <button class="btn-gold" onclick="showPage('contact')"><svg style="width:14px;height:14px;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> 無料相談する →</button>
         <button class="btn-outline" onclick="showPage('service')">サービスを見る</button>
       </div>
     </div>
@@ -219,33 +833,124 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
     </div>
   </section>
 
+  <!-- メディア掲載・掲載実績バナー -->
+  <div class="media-section">
+    <div class="media-track">
+      <span class="media-logo">MEDIA COVERAGE</span>
+      <span class="media-logo">STARTUP NEWS</span>
+      <span class="media-logo">BUSINESS INSIDER</span>
+      <span class="media-logo">CREATIVE AWARDS</span>
+      <span class="media-logo">VIDEO PRODUCTION</span>
+      <span class="media-logo">JAPAN DIGITAL</span>
+      <span class="media-logo">TECH MEDIA</span>
+      <span class="media-logo">SNS MARKETING</span>
+      <!-- ループ用コピー -->
+      <span class="media-logo">MEDIA COVERAGE</span>
+      <span class="media-logo">STARTUP NEWS</span>
+      <span class="media-logo">BUSINESS INSIDER</span>
+      <span class="media-logo">CREATIVE AWARDS</span>
+      <span class="media-logo">VIDEO PRODUCTION</span>
+      <span class="media-logo">JAPAN DIGITAL</span>
+      <span class="media-logo">TECH MEDIA</span>
+      <span class="media-logo">SNS MARKETING</span>
+    </div>
+  </div>
+
   <section class="home-section" style="background:#0A0A0A;">
     <div class="sec-label reveal">SERVICES</div>
     <h2 class="sec-title reveal">SUIが対応できる<br>すべてのサービス</h2>
     <div class="gold-bar reveal"></div>
     <p class="sec-desc reveal">動画制作・WEB制作・アプリ開発をワンストップで。複数の会社に頼む手間とコストを一括解決します。</p>
     <div class="srv-grid">
-      <div class="srv-card reveal">
-        <span class="srv-icon">🎬</span>
+      <div class="srv-card reveal tilt-card"><div class="tilt-shine"></div>
+        <div class="srv-icon-box" data-srv-canvas="0">
+          <canvas class="srv-mini-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></canvas>
+          <svg style="position:relative;z-index:1;" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4"/><polygon points="10 8 16 11 10 14 10 8"/>
+          </svg>
+        </div>
         <div class="srv-name">ショート動画制作</div>
         <div class="srv-desc">TikTok・Instagram・YouTube Shorts対応。撮影・企画・編集込み。まとめ発注でさらにお得。</div>
         <div style="font-size:13px;color:var(--gold);font-weight:700;">¥10,000〜/本（撮影・企画・編集込み）</div>
       </div>
-      <div class="srv-card reveal">
-        <span class="srv-icon">▶️</span>
+      <div class="srv-card reveal tilt-card"><div class="tilt-shine"></div>
+        <div class="srv-icon-box" data-srv-canvas="1">
+          <canvas class="srv-mini-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></canvas>
+          <svg style="position:relative;z-index:1;" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
+          </svg>
+        </div>
         <div class="srv-name">YouTube動画編集</div>
         <div class="srv-desc">テロップ・BGM・サムネイルまで対応。本数が増えるほど単価が下がる柔軟な料金体系。</div>
         <div style="font-size:13px;color:var(--gold);font-weight:700;">¥2,000〜/分｜相談受付中</div>
       </div>
-      <div class="srv-card reveal">
-        <span class="srv-icon">🌐</span>
+      <div class="srv-card reveal tilt-card"><div class="tilt-shine"></div>
+        <div class="srv-icon-box" data-srv-canvas="2">
+          <canvas class="srv-mini-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></canvas>
+          <svg style="position:relative;z-index:1;" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
         <div class="srv-name">WEB・アプリ開発</div>
         <div class="srv-desc">LP・コーポレートサイト・スマホアプリまで対応。新事業のDX推進にも。補助金活用相談可。</div>
-        <div style="font-size:13px;color:var(--gold);font-weight:700;">📩 工数・内容により変動｜相談受付中</div>
+        <div style="font-size:13px;color:var(--gold);font-weight:700;">工数・内容により変動｜相談受付中</div>
       </div>
     </div>
     <div style="text-align:center;margin-top:40px;">
       <button class="btn-outline reveal" onclick="showPage('service')">すべてのサービスを見る →</button>
+    </div>
+  </section>
+
+  <!-- ★ ホーム パッケージ -->
+  <section class="home-pkg-section reveal">
+    <div class="home-pkg-inner">
+      <div class="home-pkg-label">PACKAGE</div>
+      <h2 class="home-pkg-title">いちばん売れている<br><em>パッケージプラン</em></h2>
+      <p class="home-pkg-desc">企画・撮影・編集・分析まで丸ごとお任せ。<br>YouTube運用を本気でやりたい方のための専用プランです。</p>
+      <div class="home-pkg-cards">
+
+        <div class="home-pkg-card">
+          <div class="home-pkg-card-badge">YOUTUBE PLAN</div>
+          <div class="home-pkg-card-name">YouTube運用パッケージ</div>
+          <div class="home-pkg-card-price">¥250,000<span>/月（税別）</span></div>
+          <ul class="home-pkg-card-list">
+            <li>ロング動画制作　月4本（1本15分程度）</li>
+            <li>サムネイル　3枚体制</li>
+            <li>切り抜きショート　月12本</li>
+            <li>YouTube分析</li>
+            <li>企画〜撮影　込み</li>
+          </ul>
+          <div class="home-pkg-card-note">
+            ※ 制作本数・完成尺により金額は上下します<br>
+            ※ 1本15分程度の想定になります<br>
+            ※ 撮影場所により金額が前後する場合があります<br>
+            ※ ポートフォリオとして掲載可能な方は、金額をお安くすることも可能です<br>
+            ※ 何かございましたらお気軽にご連絡ください
+          </div>
+        </div>
+
+        <div class="home-pkg-card home-pkg-card--featured">
+          <div class="home-pkg-card-badge home-pkg-card-badge--best">★ BEST VALUE</div>
+          <div class="home-pkg-card-includes">YouTube運用パッケージ　全て含む</div>
+          <div class="home-pkg-card-name">ALLパッケージ</div>
+          <div class="home-pkg-card-price">¥400,000<span>/月（税別）</span></div>
+          <ul class="home-pkg-card-list">
+            <li>YouTube運用パッケージ　全て込み</li>
+            <li>LINE構築</li>
+            <li>LINE分析</li>
+          </ul>
+          <div class="home-pkg-card-note">
+            ※ 最もお得なフルサポートプラン<br>
+            ※ ポートフォリオとして掲載可能な方は、金額をお安くすることも可能です<br>
+            ※ 何かございましたらお気軽にご連絡ください
+          </div>
+        </div>
+
+      </div>
+      <div class="home-pkg-cta-wrap">
+        <button class="btn-gold" onclick="showPage('service')">パッケージ詳細を見る →</button>
+        <button class="btn-outline" onclick="showPage('contact')">無料相談する</button>
+      </div>
     </div>
   </section>
 
@@ -261,12 +966,222 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
     </div>
   </section>
 
+  <!-- ★ 実績数字 -->
+  <section class="stats-section">
+    <div class="sec-label reveal" style="text-align:center;margin-bottom:12px;">NUMBERS</div>
+    <h2 class="sec-title reveal" style="text-align:center;margin-bottom:40px;">SUIの実績</h2>
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="stat-num"><span class="count-up" data-target="1000">0</span><span class="stat-unit">本+</span></div>
+        <div class="stat-label">累計制作本数</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-num"><span class="count-up" data-target="88">0</span><span class="stat-unit">%</span></div>
+        <div class="stat-label">顧客満足度</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-num"><span class="count-up" data-target="20">0</span><span class="stat-unit">名</span></div>
+        <div class="stat-label">クリエイタースタッフ</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-num"><span class="count-up" data-target="3">0</span><span class="stat-unit">日〜</span></div>
+        <div class="stat-label">最短納品日数</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ★ 制作フロー -->
+  <section class="flow-section">
+    <div class="sec-label reveal" style="text-align:center;margin-bottom:12px;">FLOW</div>
+    <h2 class="sec-title reveal" style="text-align:center;margin-bottom:8px;">制作の流れ</h2>
+    <p style="text-align:center;font-size:13px;color:#666;margin-bottom:0;" class="reveal">ご相談から納品まで、丁寧にサポートします</p>
+    <div class="flow-grid">
+      <div class="flow-step reveal">
+        <div class="flow-icon">
+          <div class="flow-num">01</div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="flow-title">無料相談</div>
+        <div class="flow-desc">LINE・フォームでお気軽に。予算・目的・イメージをヒアリング</div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-icon">
+          <div class="flow-num">02</div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="flow-title">企画・お見積り</div>
+        <div class="flow-desc">内容を整理して構成案と正式なお見積りをご提示</div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-icon">
+          <div class="flow-num">03</div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        </div>
+        <div class="flow-title">制作・編集</div>
+        <div class="flow-desc">撮影・編集・デザインを担当者が一貫して対応</div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-icon">
+          <div class="flow-num">04</div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="flow-title">確認・修正</div>
+        <div class="flow-desc">ご確認いただき、修正対応。満足いただけるまで対応</div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-icon">
+          <div class="flow-num">05</div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="flow-title">納品・完了</div>
+        <div class="flow-desc">ご指定の形式で納品。継続サポートも対応可能</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ★ 料金シミュレーター -->
+  <section class="sim-section">
+    <div class="sec-label reveal" style="text-align:center;margin-bottom:12px;">SIMULATOR</div>
+    <h2 class="sec-title reveal" style="text-align:center;margin-bottom:8px;">料金シミュレーター</h2>
+    <p style="text-align:center;font-size:13px;color:#666;margin-bottom:40px;" class="reveal">あくまでも目安です。実際の料金は無料相談にてご確認ください</p>
+    <div class="sim-box reveal">
+      <div>
+        <span class="sim-label">サービスを選ぶ</span>
+        <div class="sim-row" id="sim-service">
+          <button class="sim-btn active" data-type="short" onclick="simSelect('service',this)">ショート動画制作</button>
+          <button class="sim-btn" data-type="youtube" onclick="simSelect('service',this)">YouTube動画編集</button>
+          <button class="sim-btn" data-type="web" onclick="simSelect('service',this)">WEB制作</button>
+          <button class="sim-btn" data-type="app" onclick="simSelect('service',this)">アプリ開発</button>
+          <button class="sim-btn" data-type="sns" onclick="simSelect('service',this)">SNS運用</button>
+        </div>
+      </div>
+      <div id="sim-options-wrap">
+        <span class="sim-label" id="sim-opt-label">本数・規模を選ぶ</span>
+        <div class="sim-row" id="sim-options"></div>
+      </div>
+      <div class="sim-result">
+        <div class="sim-price"><span id="sim-price-yen">¥</span><span id="sim-price-val">10,000</span><span id="sim-price-tilde" style="font-size:20px;">〜</span></div>
+        <div class="sim-price-label" id="sim-price-unit">（1本あたり・撮影・企画・編集込み）</div>
+        <p class="sim-note">※ このシミュレーターはあくまでも目安です。<br>実際の料金は内容・工数により変動します。<strong style="color:var(--gold);">まずは無料相談をご利用ください。</strong></p>
+        <div class="sim-cta-row">
+          <a href="https://line.me/ti/p/9615727302" class="btn-line-green" style="padding:12px 24px;font-size:13px;"><svg style="width:13px;height:13px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> LINEで無料相談</a>
+          <button class="btn-outline" onclick="showPage('contact')" style="padding:12px 24px;font-size:13px;">詳細を問い合わせる</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ★ FAQ -->
+  <section class="faq-section">
+    <div class="sec-label reveal" style="text-align:center;margin-bottom:12px;">FAQ</div>
+    <h2 class="sec-title reveal" style="text-align:center;margin-bottom:0;">よくある質問</h2>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">料金はどのくらいかかりますか？</span>
+          <span class="faq-q-icon">+</span>
+        </div>
+        <div class="faq-a"><p class="faq-a-text">ショート動画は<em>¥10,000〜/本</em>（撮影・企画・編集込み）、YouTube編集は<em>¥2,000〜/分</em>が目安です。内容・工数・ボリュームによって変動しますので、まずはお気軽に無料相談をご利用ください。お見積りは無料です。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">1本から依頼できますか？</span>
+          <span class="faq-q-icon">+</span>
+        </div>
+        <div class="faq-a"><p class="faq-a-text">はい、<em>単発1本から</em>ご依頼いただけます。月額継続プランもご用意しており、継続発注いただく場合はさらにお得な料金でご提供しています。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">納期はどのくらいですか？</span>
+          <span class="faq-q-icon">+</span>
+        </div>
+        <div class="faq-a"><p class="faq-a-text">ショート動画・YouTube編集は<em>最短3営業日〜</em>対応可能です。WEB制作は規模によりますが、LP1枚なら<em>2〜3週間</em>が目安です。急ぎの案件もご相談ください。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">修正は何回まで対応してもらえますか？</span>
+          <span class="faq-q-icon">+</span>
+        </div>
+        <div class="faq-a"><p class="faq-a-text">基本的に<em>満足いただけるまで</em>対応しています。大幅な内容変更（方向性の転換など）は別途ご相談となる場合がありますが、通常の修正は柔軟に対応しますのでご安心ください。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">素材（映像・写真）がない場合でも依頼できますか？</span>
+          <span class="faq-q-icon">+</span>
+        </div>
+        <div class="faq-a"><p class="faq-a-text">はい、<em>撮影込みプラン</em>もご用意しています。現地訪問・ヒアリングから対応しますので、素材がなくても安心してご依頼ください。ストック素材を活用したプランも可能です。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">補助金は使えますか？</span>
+          <span class="faq-q-icon">+</span>
+        </div>
+        <div class="faq-a"><p class="faq-a-text">SUIのサービスは<em>IT導入補助金・持続化補助金・デジタル化推進補助金</em>などの対象となる場合があります。補助金活用のご相談も承っていますので、お気軽にご連絡ください。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ★ ダッシュボード -->
+  <section class="dash-section">
+    <div class="sec-label reveal" style="text-align:center;margin-bottom:12px;">PERFORMANCE</div>
+    <h2 class="sec-title reveal" style="text-align:center;margin-bottom:8px;">SUIが生み出す成果</h2>
+    <p style="text-align:center;font-size:13px;color:#666;margin-bottom:0;" class="reveal">実際の制作・運用実績から算出した平均値です</p>
+    <div class="dash-grid">
+      <div class="dash-card reveal">
+        <div class="dash-card-label">SNS ENGAGEMENT RATE</div>
+        <div class="dash-card-val dash-count" data-val="312">0<span style="font-size:16px;">%UP</span></div>
+        <div class="dash-bar-wrap"><div class="dash-bar" data-width="78"></div></div>
+        <p style="font-size:11px;color:#555;margin-top:10px;">制作前と比較した平均エンゲージメント向上率</p>
+        <svg class="dash-sparkline" width="80" height="40" viewBox="0 0 80 40"><polyline points="0,35 15,28 30,20 45,24 60,10 80,5" fill="none" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/></svg>
+      </div>
+      <div class="dash-card reveal">
+        <div class="dash-card-label">CLIENT RETENTION</div>
+        <div class="dash-card-val dash-count" data-val="76">0<span style="font-size:16px;">%</span></div>
+        <div class="dash-bar-wrap"><div class="dash-bar" data-width="76"></div></div>
+        <p style="font-size:11px;color:#555;margin-top:10px;">リピート・継続発注率</p>
+        <svg class="dash-sparkline" width="80" height="40" viewBox="0 0 80 40"><polyline points="0,30 20,25 40,22 55,18 70,14 80,10" fill="none" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/></svg>
+      </div>
+      <div class="dash-card reveal">
+        <div class="dash-card-label">DELIVERY SPEED</div>
+        <div class="dash-card-val dash-count" data-val="3">0<span style="font-size:16px;">日〜</span></div>
+        <div class="dash-bar-wrap"><div class="dash-bar" data-width="92"></div></div>
+        <p style="font-size:11px;color:#555;margin-top:10px;">ショート動画の最短納品日数</p>
+        <svg class="dash-sparkline" width="80" height="40" viewBox="0 0 80 40"><polyline points="0,38 20,30 35,20 50,15 65,8 80,4" fill="none" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ★ VOICE -->
+  <section class="testimonials-section">
+    <div class="sec-label reveal" style="text-align:center;margin-bottom:12px;">TESTIMONIALS</div>
+    <h2 class="sec-title reveal" style="text-align:center;margin-bottom:12px;">VOICE</h2>
+    <p style="text-align:center;font-size:11px;color:#444;letter-spacing:2px;margin-bottom:32px;">※ イメージです</p>
+    <div style="overflow:hidden;">
+      <div class="testimonials-track">
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">動画のクオリティが想像以上でした。テロップのセンスが良く、SNSでの反応も以前の3倍になりました。リピートしています。</div><div class="testi-name">飲食店 経営者</div><div class="testi-role">Instagram運用 / ショート動画</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★<span style="color:#333;">★</span></div><div class="testi-text">予算が限られていたのに、こちらの要望を全部叶えてくれました。他社より安くて、仕上がりは断然上でした。</div><div class="testi-name">アパレルブランド 担当者</div><div class="testi-role">YouTube動画編集</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">レスポンスが早く、修正も嫌な顔ひとつせず対応してくれます。長く付き合えるパートナーだと感じています。</div><div class="testi-name">医療クリニック 院長</div><div class="testi-role">採用動画 / WEB制作</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★<span style="color:#333;">★</span></div><div class="testi-text">ホームページのデザインが気に入りすぎて、追加で動画も依頼しました。ワンストップで頼めるのが本当に便利です。</div><div class="testi-name">不動産会社 社長</div><div class="testi-role">コーポレートサイト / 企業PR動画</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">TikTokのフォロワーが6ヶ月で0から8,000人になりました。企画から投稿まで全部お任せできて助かっています。</div><div class="testi-name">美容室 オーナー</div><div class="testi-role">TikTok運用 / ショート動画</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">補助金を使えると教えてもらい、実質半額でアプリが完成しました。知らなかったら損していたと思います。</div><div class="testi-name">製造業 経営者</div><div class="testi-role">スマホアプリ開発</div></div>
+        <!-- 2周目（ループ用コピー） -->
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">動画のクオリティが想像以上でした。テロップのセンスが良く、SNSでの反応も以前の3倍になりました。リピートしています。</div><div class="testi-name">飲食店 経営者</div><div class="testi-role">Instagram運用 / ショート動画</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★<span style="color:#333;">★</span></div><div class="testi-text">予算が限られていたのに、こちらの要望を全部叶えてくれました。他社より安くて、仕上がりは断然上でした。</div><div class="testi-name">アパレルブランド 担当者</div><div class="testi-role">YouTube動画編集</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">レスポンスが早く、修正も嫌な顔ひとつせず対応してくれます。長く付き合えるパートナーだと感じています。</div><div class="testi-name">医療クリニック 院長</div><div class="testi-role">採用動画 / WEB制作</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★<span style="color:#333;">★</span></div><div class="testi-text">ホームページのデザインが気に入りすぎて、追加で動画も依頼しました。ワンストップで頼めるのが本当に便利です。</div><div class="testi-name">不動産会社 社長</div><div class="testi-role">コーポレートサイト / 企業PR動画</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">TikTokのフォロワーが6ヶ月で0から8,000人になりました。企画から投稿まで全部お任せできて助かっています。</div><div class="testi-name">美容室 オーナー</div><div class="testi-role">TikTok運用 / ショート動画</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">補助金を使えると教えてもらい、実質半額でアプリが完成しました。知らなかったら損していたと思います。</div><div class="testi-name">製造業 経営者</div><div class="testi-role">スマホアプリ開発</div></div>
+      </div>
+    </div>
+  </section>
+
   <div class="cta-band">
+    <canvas class="cta-canvas"></canvas>
     <h2>まずは無料でご相談ください</h2>
     <p>予算・本数・目的を教えていただければ、最適なプランをご提案します。<br>お見積りは無料。お気軽にどうぞ。</p>
     <div class="cta-btns">
-      <a href="https://line.me/ti/p/9615727302" class="btn-line-green">💬 LINEで相談する</a>
-      <button class="btn-black" onclick="showPage('contact')">📩 フォームで問い合わせ</button>
+      <a href="https://line.me/ti/p/9615727302" class="btn-line-green"><svg style="width:14px;height:14px;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> LINEで相談する</a>
+      <button class="btn-black" onclick="showPage('contact')"><svg style="width:14px;height:14px;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> フォームで問い合わせ</button>
     </div>
   </div>
 
@@ -279,10 +1194,14 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
 
 <!-- ══════════════ ABOUT ══════════════ -->
 <div id="page-about" class="page">
-  <div class="about-hero">
-    <div class="sec-label">ABOUT</div>
-    <h1>会社<em>概要</em></h1>
-    <p>株式会社粋（SUI）についてご紹介します。</p>
+  <div class="about-hero sub-hero">
+    <canvas class="sub-hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+    <div class="sub-hero-scanlines"></div>
+    <div style="position:relative;z-index:1;">
+      <div class="sec-label">ABOUT</div>
+      <h1>会社<em>概要</em></h1>
+      <p>株式会社粋（SUI）についてご紹介します。</p>
+    </div>
   </div>
   <div class="about-body">
     <div class="about-grid">
@@ -313,27 +1232,40 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
         <div class="rep-icon">SUI</div>
         <div>
           <div class="rep-name">相模 哲太</div>
-          
-          <div class="rep-bio">「映像の力で企業の価値を最大化する」というビジョンのもと、株式会社粋（SUI）を設立。動画制作にとどまらず、WEB・アプリ開発まで一括でサポートできる体制を構築。中小企業から大手まで、規模を問わず「ちょうどいい」クリエイティブパートナーとして伴走します。</div>
+          <div class="rep-role" style="font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:14px;">Co-Founder / CEO</div>
+          <div class="rep-bio">
+            大手金融機関でシステム開発を経験後、国内最大級のSNSマーケティング企業にて運用戦略やコンテンツマーケティングを実践。<br><br>
+            現在は株式会社粋（SUI）を共同創業し、動画制作・SNS運用・Web制作・AI開発を融合したクリエイティブ事業を展開しています。<br><br>
+            これまでに動画制作のみならず、WebサイトやAIアプリケーションの開発・納品にも携わり、企画、制作、運用まで一気通貫で支援。<br><br>
+            単なる制作会社ではなく、「成果につながる仕組み」を構築するパートナーとして、企業の成長に伴走しています。
+          </div>
         </div>
       </div>
       <div class="rep-card reveal">
         <div class="rep-icon" style="background:var(--black);border:2px solid var(--gold);color:var(--gold);">SUI</div>
         <div>
           <div class="rep-name">佐伯 直哉</div>
-          
-          <div class="rep-bio">お客様の窓口として、ヒアリングから納品まで一貫してサポート。動画制作・WEB制作・アプリ開発の各分野でご相談を担当します。まずはお気軽にご連絡ください。<br><br>📞 080-7219-4567<br>📧 suiincorporated0107@gmail.com</div>
+          <div class="rep-role" style="font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:14px;">Co-Founder / Director</div>
+          <div class="rep-bio">
+            東証プライム上場企業にて営業職として、多くのお客様の課題解決に携わる。<br><br>
+            現在は株式会社粋（SUI）の窓口として、動画制作、SNS運用、WEB制作、AIアプリ開発まで、お客様の目的に合わせて最適なチームを編成。<br><br>
+            <span style="color:var(--gold2);font-style:italic;">「まず誰に相談すればいいかわからない。」</span><br><br>
+            そんな時に真っ先に思い出していただける存在を目指し、ご相談から納品、その先の成果まで一貫して伴走しています。<br><br>
+            <span style="color:var(--gold);font-size:11px;letter-spacing:1px;">TEL</span>　080-7219-4567<br>
+            <span style="color:var(--gold);font-size:11px;letter-spacing:1px;">MAIL</span>　suiincorporated0107@gmail.com
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="cta-band">
+    <canvas class="cta-canvas"></canvas>
     <h2>一緒に成長しませんか</h2>
     <p>まずはお気軽にご相談ください。最適なプランをご提案します。</p>
     <div class="cta-btns">
-      <a href="https://line.me/ti/p/9615727302" class="btn-line-green">💬 LINEで相談する</a>
-      <button class="btn-black" onclick="showPage('contact')">📩 お問い合わせ</button>
+      <a href="https://line.me/ti/p/9615727302" class="btn-line-green"><svg style="width:14px;height:14px;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> LINEで相談する</a>
+      <button class="btn-black" onclick="showPage('contact')"><svg style="width:14px;height:14px;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> お問い合わせ</button>
     </div>
   </div>
   <footer>
@@ -345,15 +1277,27 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
 
 <!-- ══════════════ SERVICE ══════════════ -->
 <div id="page-service" class="page">
-  <div class="srv-hero">
-    <div class="sec-label">SERVICES</div>
-    <h1>サービス<em>一覧</em></h1>
-    <p>動画制作からWEB・アプリ開発まで、ワンストップで対応します。</p>
+  <div class="srv-hero sub-hero">
+    <canvas class="sub-hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+    <div class="sub-hero-scanlines"></div>
+    <div style="position:relative;z-index:1;">
+      <div class="sec-label">SERVICES</div>
+      <h1>サービス<em>一覧</em></h1>
+      <p>動画制作からWEB・アプリ開発まで、ワンストップで対応します。</p>
+    </div>
   </div>
   <div class="srv-body">
     <div class="srv-block reveal">
       <div class="srv-block-header">
-        <div class="srv-block-title"><span>SHORT MOVIE</span>🎬 ショート動画制作</div>
+        <div class="srv-block-title">
+          <span>SHORT MOVIE</span>
+          <span style="display:inline-flex;align-items:center;gap:10px;">
+            <span style="display:inline-flex;width:28px;height:28px;border:1px solid rgba(201,168,76,0.4);align-items:center;justify-content:center;vertical-align:middle;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4"/><polygon points="10 8 16 11 10 14 10 8"/></svg>
+            </span>
+            ショート動画制作
+          </span>
+        </div>
         <div class="price-tag"><div class="p-main">¥10,000〜/本</div><div class="p-sub">撮影・企画・編集込み ※工数により変動</div></div>
       </div>
       <p style="font-size:14px;color:#888;line-height:1.9;margin-bottom:24px;">TikTok・Instagram・YouTube Shorts対応。撮影・企画・編集をすべて込みでご提供。まとめ発注でさらにお得です。</p>
@@ -367,7 +1311,15 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
 
     <div class="srv-block reveal">
       <div class="srv-block-header">
-        <div class="srv-block-title"><span>YOUTUBE</span>▶️ YouTube動画編集</div>
+        <div class="srv-block-title">
+          <span>YOUTUBE</span>
+          <span style="display:inline-flex;align-items:center;gap:10px;">
+            <span style="display:inline-flex;width:28px;height:28px;border:1px solid rgba(201,168,76,0.4);align-items:center;justify-content:center;vertical-align:middle;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </span>
+            YouTube動画編集
+          </span>
+        </div>
         <div class="price-tag"><div class="p-main">¥2,000〜/分</div><div class="p-sub">編集のみ ※工数により変動</div></div>
       </div>
       <p style="font-size:14px;color:#888;line-height:1.9;margin-bottom:24px;">企業PR・解説・採用・商品紹介まで対応。2,000円/分〜（編集のみ）。撮影込みの場合は別途ご相談ください。</p>
@@ -381,7 +1333,15 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
 
     <div class="srv-block reveal">
       <div class="srv-block-header">
-        <div class="srv-block-title"><span>WEB / APP</span>🌐 WEB・アプリ開発</div>
+        <div class="srv-block-title">
+          <span>WEB / APP</span>
+          <span style="display:inline-flex;align-items:center;gap:10px;">
+            <span style="display:inline-flex;width:28px;height:28px;border:1px solid rgba(201,168,76,0.4);align-items:center;justify-content:center;vertical-align:middle;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </span>
+            WEB・アプリ開発
+          </span>
+        </div>
         <div class="price-tag"><div class="p-main">相談受付中</div><div class="p-sub">規模・機能により異なります</div></div>
       </div>
       <p style="font-size:14px;color:#888;line-height:1.9;margin-bottom:24px;">LP・コーポレートサイト・ECサイト・スマホアプリまで対応。補助金活用のご相談も承ります。</p>
@@ -395,7 +1355,15 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
 
     <div class="srv-block reveal">
       <div class="srv-block-header">
-        <div class="srv-block-title"><span>SNS MANAGEMENT</span>📣 SNS運用サポート</div>
+        <div class="srv-block-title">
+          <span>SNS MANAGEMENT</span>
+          <span style="display:inline-flex;align-items:center;gap:10px;">
+            <span style="display:inline-flex;width:28px;height:28px;border:1px solid rgba(201,168,76,0.4);align-items:center;justify-content:center;vertical-align:middle;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12 19.79 19.79 0 0 1 1.63 3.36 2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            SNS運用サポート
+          </span>
+        </div>
         <div class="price-tag"><div class="p-main">相談受付中</div><div class="p-sub">月額プランあり</div></div>
       </div>
       <p style="font-size:14px;color:#888;line-height:1.9;margin-bottom:24px;">投稿代行・アカウント設計・分析レポートまで対応。継続発注で月額料金も柔軟にご相談。</p>
@@ -406,12 +1374,127 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
     </div>
   </div>
 
+  <!-- ★ パッケージプラン -->
+  <section class="pkg-section">
+    <div class="sec-label reveal" style="text-align:center;margin-bottom:12px;">PACKAGE</div>
+    <h2 class="sec-title reveal" style="text-align:center;margin-bottom:8px;">パッケージプラン</h2>
+    <p class="sec-desc reveal" style="text-align:center;margin:0 auto;max-width:480px;">YouTube運用をまるごとお任せ。企画から分析まで一貫してサポートします。</p>
+    <div class="gold-bar reveal" style="margin:20px auto;"></div>
+    <div class="pkg-grid">
+
+      <!-- YouTube運用パッケージ -->
+      <div class="pkg-card reveal">
+        <div class="pkg-badge">YOUTUBE PLAN</div>
+        <div class="pkg-name">YouTube運用パッケージ</div>
+        <div class="pkg-price-wrap">
+          <div class="pkg-price">¥250,000<span style="font-size:18px;color:#888;">/月</span></div>
+          <div class="pkg-price-sub">税別 ／ 制作本数・完成尺により変動あり</div>
+        </div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li><strong>ロング動画制作</strong>　月4本（1本15分程度）</li>
+          <li><strong>サムネイル</strong>　3枚体制</li>
+          <li><strong>切り抜きショート</strong>　月12本</li>
+          <li><strong>YouTube分析</strong></li>
+          <li><strong>企画〜撮影</strong>　込み</li>
+        </ul>
+        <div class="pkg-note">
+          ※ 制作本数・完成尺によって金額は上下します<br>
+          ※ 1本15分程度の想定になります<br>
+          ※ 撮影場所により金額が前後する場合があります<br>
+          ※ ポートフォリオとして掲載可能な方は、金額をお安くすることも可能です<br>
+          ※ 何かございましたらお気軽にご連絡ください
+        </div>
+        <button class="pkg-cta" onclick="showPage('contact');">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          無料相談する
+        </button>
+      </div>
+
+      <!-- ALLパッケージ -->
+      <div class="pkg-card featured reveal">
+        <div class="pkg-badge best">★ BEST VALUE</div>
+        <div class="pkg-includes">YouTube運用パッケージ　全て含む</div>
+        <div class="pkg-name">ALLパッケージ</div>
+        <div class="pkg-price-wrap">
+          <div class="pkg-price">¥400,000<span style="font-size:18px;color:#888;">/月</span></div>
+          <div class="pkg-price-sub">税別 ／ 最もお得なフルサポートプラン</div>
+        </div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li><strong>YouTube運用パッケージ</strong>　全て込み</li>
+          <li><strong>LINE構築</strong></li>
+          <li><strong>LINE分析</strong></li>
+        </ul>
+        <div class="pkg-note">
+          ※ YouTube運用パッケージの内容（ロング動画・ショート・サムネイル・分析・企画〜撮影）をすべて含みます<br>
+          ※ ポートフォリオとして掲載可能な方は、金額をお安くすることも可能です<br>
+          ※ 何かございましたらお気軽にご連絡ください
+        </div>
+        <button class="pkg-cta" onclick="showPage('contact');">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          無料相談する
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ★ 実績数字 -->
+  <section class="stats-section">
+    <div class="sec-label reveal" style="text-align:center;margin-bottom:12px;">NUMBERS</div>
+    <h2 class="sec-title reveal" style="text-align:center;margin-bottom:40px;">SUIの実績</h2>
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="stat-num"><span class="count-up" data-target="1000">0</span><span class="stat-unit">本+</span></div>
+        <div class="stat-label">累計制作本数</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-num"><span class="count-up" data-target="88">0</span><span class="stat-unit">%</span></div>
+        <div class="stat-label">顧客満足度</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-num"><span class="count-up" data-target="20">0</span><span class="stat-unit">名</span></div>
+        <div class="stat-label">クリエイタースタッフ</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-num"><span class="count-up" data-target="3">0</span><span class="stat-unit">日〜</span></div>
+        <div class="stat-label">最短納品日数</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ★ お客様の声 -->
+  <section class="testimonials-section">
+    <div class="sec-label reveal" style="text-align:center;margin-bottom:12px;">TESTIMONIALS</div>
+    <h2 class="sec-title reveal" style="text-align:center;margin-bottom:12px;">VOICE</h2>
+    <p style="text-align:center;font-size:11px;color:#444;letter-spacing:2px;margin-bottom:32px;">※ イメージです</p>
+    <div style="overflow:hidden;">
+      <div class="testimonials-track">
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">動画のクオリティが想像以上でした。テロップのセンスが良く、SNSでの反応も以前の3倍になりました。リピートしています。</div><div class="testi-name">飲食店 経営者</div><div class="testi-role">Instagram運用 / ショート動画</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★<span style="color:#333;">★</span></div><div class="testi-text">予算が限られていたのに、こちらの要望を全部叶えてくれました。他社より安くて、仕上がりは断然上でした。</div><div class="testi-name">アパレルブランド 担当者</div><div class="testi-role">YouTube動画編集</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">レスポンスが早く、修正も嫌な顔ひとつせず対応してくれます。長く付き合えるパートナーだと感じています。</div><div class="testi-name">医療クリニック 院長</div><div class="testi-role">採用動画 / WEB制作</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★<span style="color:#333;">★</span></div><div class="testi-text">ホームページのデザインが気に入りすぎて、追加で動画も依頼しました。ワンストップで頼めるのが本当に便利です。</div><div class="testi-name">不動産会社 社長</div><div class="testi-role">コーポレートサイト / 企業PR動画</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">TikTokのフォロワーが6ヶ月で0から8,000人になりました。企画から投稿まで全部お任せできて助かっています。</div><div class="testi-name">美容室 オーナー</div><div class="testi-role">TikTok運用 / ショート動画</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">補助金を使えると教えてもらい、実質半額でアプリが完成しました。知らなかったら損していたと思います。</div><div class="testi-name">製造業 経営者</div><div class="testi-role">スマホアプリ開発</div></div>
+        <!-- 2周目（ループ用コピー） -->
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">動画のクオリティが想像以上でした。テロップのセンスが良く、SNSでの反応も以前の3倍になりました。リピートしています。</div><div class="testi-name">飲食店 経営者</div><div class="testi-role">Instagram運用 / ショート動画</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★<span style="color:#333;">★</span></div><div class="testi-text">予算が限られていたのに、こちらの要望を全部叶えてくれました。他社より安くて、仕上がりは断然上でした。</div><div class="testi-name">アパレルブランド 担当者</div><div class="testi-role">YouTube動画編集</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">レスポンスが早く、修正も嫌な顔ひとつせず対応してくれます。長く付き合えるパートナーだと感じています。</div><div class="testi-name">医療クリニック 院長</div><div class="testi-role">採用動画 / WEB制作</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★<span style="color:#333;">★</span></div><div class="testi-text">ホームページのデザインが気に入りすぎて、追加で動画も依頼しました。ワンストップで頼めるのが本当に便利です。</div><div class="testi-name">不動産会社 社長</div><div class="testi-role">コーポレートサイト / 企業PR動画</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">TikTokのフォロワーが6ヶ月で0から8,000人になりました。企画から投稿まで全部お任せできて助かっています。</div><div class="testi-name">美容室 オーナー</div><div class="testi-role">TikTok運用 / ショート動画</div></div>
+        <div class="testi-card"><div class="testi-stars" style="color:var(--gold);">★★★★★</div><div class="testi-text">補助金を使えると教えてもらい、実質半額でアプリが完成しました。知らなかったら損していたと思います。</div><div class="testi-name">製造業 経営者</div><div class="testi-role">スマホアプリ開発</div></div>
+      </div>
+    </div>
+  </section>
+
   <div class="cta-band">
+    <canvas class="cta-canvas"></canvas>
     <h2>まずは無料でご相談ください</h2>
     <p>どのサービスが最適か、予算・目的に合わせてご提案します。</p>
     <div class="cta-btns">
-      <a href="https://line.me/ti/p/9615727302" class="btn-line-green">💬 LINEで相談する</a>
-      <button class="btn-black" onclick="showPage('contact')">📩 お問い合わせフォーム</button>
+      <a href="https://line.me/ti/p/9615727302" class="btn-line-green"><svg style="width:14px;height:14px;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> LINEで相談する</a>
+      <button class="btn-black" onclick="showPage('contact')"><svg style="width:14px;height:14px;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> お問い合わせフォーム</button>
     </div>
   </div>
   <footer>
@@ -423,10 +1506,14 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
 
 <!-- ══════════════ PORTFOLIO ══════════════ -->
 <div id="page-portfolio" class="page">
-  <div class="contact-hero">
-    <div class="sec-label">PORTFOLIO</div>
-    <h1>制作<em>実績</em></h1>
-    <p>SUIが手がけた動画・WEB・アプリ開発の実績をご紹介します。</p>
+  <div class="contact-hero sub-hero">
+    <canvas class="sub-hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+    <div class="sub-hero-scanlines"></div>
+    <div style="position:relative;z-index:1;">
+      <div class="sec-label">PORTFOLIO</div>
+      <h1>制作<em>実績</em></h1>
+      <p>SUIが手がけた動画・WEB・アプリ開発の実績をご紹介します。</p>
+    </div>
   </div>
 
   <div style="padding:80px 48px;">
@@ -438,42 +1525,66 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
         <div style="font-size:13px;color:#888;line-height:1.8;">動画制作ディレクターの詳細な制作実績はforiioにて公開中。<br>過去の編集作品・演出スタイルをご確認いただけます。</div>
       </div>
       <a href="https://www.foriio.com/tetsu-s2020" target="_blank" style="background:var(--gold);color:var(--black);padding:14px 32px;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;transition:all 0.3s;" onmouseover="this.style.background='#F0C96A'" onmouseout="this.style.background='#C9A84C'">
-        🎬 foriioで見る →
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4"/><polygon points="10 8 16 11 10 14 10 8"/></svg> foriioで見る →
       </a>
     </div>
 
-    <!-- フィルター -->
-    <div class="reveal" style="display:flex;gap:8px;margin-bottom:40px;flex-wrap:wrap;">
-      <button onclick="filterPort('all')" id="filter-all" style="background:var(--gold);color:var(--black);border:none;padding:8px 20px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:1px;font-family:'Noto Sans JP',sans-serif;transition:all 0.3s;">すべて</button>
-      <button onclick="filterPort('video')" id="filter-video" style="background:transparent;color:#888;border:1px solid #333;padding:8px 20px;font-size:12px;cursor:pointer;letter-spacing:1px;font-family:'Noto Sans JP',sans-serif;transition:all 0.3s;">動画制作</button>
-      <button onclick="filterPort('web')" id="filter-web" style="background:transparent;color:#888;border:1px solid #333;padding:8px 20px;font-size:12px;cursor:pointer;letter-spacing:1px;font-family:'Noto Sans JP',sans-serif;transition:all 0.3s;">WEB制作</button>
-      <button onclick="filterPort('app')" id="filter-app" style="background:transparent;color:#888;border:1px solid #333;padding:8px 20px;font-size:12px;cursor:pointer;letter-spacing:1px;font-family:'Noto Sans JP',sans-serif;transition:all 0.3s;">アプリ開発</button>
-    </div>
+
 
     <!-- グリッド -->
     <div id="port-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;">
       <div class="port-item reveal" data-cat="video" style="background:#111;overflow:hidden;">
-        <div style="background:linear-gradient(135deg,#1a1200,#2a1a00);height:160px;display:flex;align-items:center;justify-content:center;font-size:48px;">🎬</div>
+        <div class="port-thumb" data-icon="play-circle" style="position:relative;height:160px;background:#0e0a00;overflow:hidden;">
+          <canvas class="port-canvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+          <div class="port-thumb-icon" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="rgba(255,255,255,0.15)"/></svg>
+          </div>
+        </div>
         <div style="padding:24px;"><div style="font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:8px;">YOUTUBE / EDITING</div><div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;margin-bottom:8px;">企業PR動画編集</div><div style="font-size:12px;color:#666;line-height:1.7;">企業紹介・採用向けYouTube動画の編集制作。テロップ・BGM・カラーグレーディング対応。</div></div>
       </div>
       <div class="port-item reveal" data-cat="video" style="background:#111;overflow:hidden;">
-        <div style="background:linear-gradient(135deg,#0a1a0a,#0a2a0a);height:160px;display:flex;align-items:center;justify-content:center;font-size:48px;">📱</div>
+        <div class="port-thumb" data-icon="monitor" style="position:relative;height:160px;background:#080e08;overflow:hidden;">
+          <canvas class="port-canvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+          <div class="port-thumb-icon" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(240,201,106,0.75)" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="1" fill="rgba(201,168,76,0.05)"/><path d="M8 21h8M12 17v4"/><polygon points="10 8 16 11 10 14 10 8" fill="rgba(201,168,76,0.15)"/></svg>
+          </div>
+        </div>
         <div style="padding:24px;"><div style="font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:8px;">SHORT MOVIE / SNS</div><div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;margin-bottom:8px;">ショート動画制作</div><div style="font-size:12px;color:#666;line-height:1.7;">TikTok・Instagram Reels向けショート動画。撮影・編集・アップロードまで一括対応。</div></div>
       </div>
       <div class="port-item reveal" data-cat="web" style="background:#111;overflow:hidden;">
-        <div style="background:linear-gradient(135deg,#0a0a1a,#0a0a2a);height:160px;display:flex;align-items:center;justify-content:center;font-size:48px;">🌐</div>
+        <div class="port-thumb" data-icon="globe" style="position:relative;height:160px;background:#06060f;overflow:hidden;">
+          <canvas class="port-canvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+          <div class="port-thumb-icon" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(200,220,255,0.7)" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+        </div>
         <div style="padding:24px;"><div style="font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:8px;">WEB / LP</div><div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;margin-bottom:8px;">LP・ランディングページ制作</div><div style="font-size:12px;color:#666;line-height:1.7;">コンバージョン重視のLP制作。デザイン・コーディング・公開まで一貫対応。</div></div>
       </div>
       <div class="port-item reveal" data-cat="video" style="background:#111;overflow:hidden;">
-        <div style="background:linear-gradient(135deg,#1a0a0a,#2a0a0a);height:160px;display:flex;align-items:center;justify-content:center;font-size:48px;">🎥</div>
+        <div class="port-thumb" data-icon="video" style="position:relative;height:160px;background:#0f0606;overflow:hidden;">
+          <canvas class="port-canvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+          <div class="port-thumb-icon" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(255,200,180,0.7)" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z" fill="rgba(255,150,100,0.1)"/><rect x="1" y="5" width="15" height="14" rx="2" fill="rgba(255,150,100,0.05)"/></svg>
+          </div>
+        </div>
         <div style="padding:24px;"><div style="font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:8px;">VIDEO / PRODUCTION</div><div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;margin-bottom:8px;">撮影込み動画制作</div><div style="font-size:12px;color:#666;line-height:1.7;">現地訪問・ヒアリングから撮影・編集まで。企業PR・採用動画・商品紹介に対応。</div></div>
       </div>
       <div class="port-item reveal" data-cat="app" style="background:#111;overflow:hidden;">
-        <div style="background:linear-gradient(135deg,#0a1a1a,#0a2020);height:160px;display:flex;align-items:center;justify-content:center;font-size:48px;">📲</div>
+        <div class="port-thumb" data-icon="phone" style="position:relative;height:160px;background:#060f0f;overflow:hidden;">
+          <canvas class="port-canvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+          <div class="port-thumb-icon" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(150,240,220,0.7)" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" fill="rgba(80,200,180,0.05)"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2"/></svg>
+          </div>
+        </div>
         <div style="padding:24px;"><div style="font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:8px;">APP / DEVELOPMENT</div><div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;margin-bottom:8px;">スマホアプリ開発</div><div style="font-size:12px;color:#666;line-height:1.7;">iOS・Android対応のアプリ開発。企画・設計・開発・リリースまで一括サポート。</div></div>
       </div>
       <div class="port-item reveal" data-cat="web" style="background:#111;overflow:hidden;">
-        <div style="background:linear-gradient(135deg,#1a1a0a,#2a2a0a);height:160px;display:flex;align-items:center;justify-content:center;font-size:48px;">🏢</div>
+        <div class="port-thumb" data-icon="layout" style="position:relative;height:160px;background:#0d0d06;overflow:hidden;">
+          <canvas class="port-canvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+          <div class="port-thumb-icon" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(240,240,180,0.7)" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" fill="rgba(200,200,80,0.04)"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+        </div>
         <div style="padding:24px;"><div style="font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:8px;">WEB / CORPORATE</div><div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;margin-bottom:8px;">コーポレートサイト制作</div><div style="font-size:12px;color:#666;line-height:1.7;">企業ブランドに合わせたコーポレートサイト。SEO対策・スマホ対応・更新サポートも。</div></div>
       </div>
     </div>
@@ -487,11 +1598,12 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
   </div>
 
   <div class="cta-band">
+    <canvas class="cta-canvas"></canvas>
     <h2>制作のご相談はお気軽に</h2>
     <p>実績・料金・スケジュールなど、まずはご相談ください。</p>
     <div class="cta-btns">
-      <a href="https://line.me/ti/p/9615727302" class="btn-line-green">💬 LINEで相談する</a>
-      <button class="btn-black" onclick="showPage('contact')">📩 お問い合わせ</button>
+      <a href="https://line.me/ti/p/9615727302" class="btn-line-green"><svg style="width:14px;height:14px;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> LINEで相談する</a>
+      <button class="btn-black" onclick="showPage('contact')"><svg style="width:14px;height:14px;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> お問い合わせ</button>
     </div>
   </div>
   <footer>
@@ -503,30 +1615,37 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
 
 <!-- ══════════════ CONTACT ══════════════ -->
 <div id="page-contact" class="page">
-  <div class="contact-hero">
-    <div class="sec-label">CONTACT</div>
-    <h1>お<em>問い合わせ</em></h1>
-    <p>まずはお気軽にご連絡ください。無料でご相談承ります。</p>
+  <div class="contact-hero sub-hero">
+    <canvas class="sub-hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+    <div class="sub-hero-scanlines"></div>
+    <div style="position:relative;z-index:1;">
+      <div class="sec-label">CONTACT</div>
+      <h1>お<em>問い合わせ</em></h1>
+      <p>まずはお気軽にご連絡ください。無料でご相談承ります。</p>
+    </div>
   </div>
   <div class="contact-body">
     <div class="contact-grid">
       <div>
         <h3 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;margin-bottom:24px;color:var(--gold2);">お気軽にご連絡ください</h3>
         <div class="contact-item">
-          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12 19.79 19.79 0 0 1 1.63 3.36 2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
           <div class="contact-item-text"><h4>TEL</h4><p>080-7219-4567<br><span style="font-size:12px;color:#555">担当：佐伯直哉</span></p></div>
         </div>
         <div class="contact-item">
-          <div class="contact-item-icon">✉️</div>
+          <div class="contact-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
           <div class="contact-item-text"><h4>EMAIL</h4><p>suiincorporated0107@gmail.com</p></div>
         </div>
         <div class="contact-item">
-          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div class="contact-item-text"><h4>ADDRESS</h4><p>〒186-0004<br>東京都国立市中2-9-32<br>グランメール国立203</p></div>
         </div>
-        <div class="line-cta">
-          <p>LINEが一番お返事が早いです！</p>
-          <a href="https://line.me/ti/p/9615727302" target="_blank">💬 LINEで相談する（LINE ID: 9615727302）</a>
+        <div class="line-cta" style="position:relative;overflow:hidden;">
+          <canvas class="line-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+          <div style="position:relative;z-index:1;">
+            <p>LINEが一番お返事が早いです！</p>
+            <a href="https://line.me/ti/p/9615727302" target="_blank"><svg style="width:14px;height:14px;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> LINEで相談する（LINE ID: 9615727302）</a>
+          </div>
         </div>
       </div>
       <div class="form-wrap reveal">
@@ -560,70 +1679,1304 @@ footer{background:#080808;padding:48px;border-top:1px solid #111;display:flex;ju
   </footer>
 </div>
 
-<script>
-function showPage(name) {
-  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
-  document.querySelectorAll('.nav-links a').forEach(function(a){ a.classList.remove('active'); });
-  document.getElementById('page-' + name).classList.add('active');
-  var navEl = document.getElementById('nav-' + name);
-  if (navEl) navEl.classList.add('active');
-  window.scrollTo({top: 0, behavior: 'smooth'});
-  initReveal();
-}
-function initReveal() {
-  var els = document.querySelectorAll('.page.active .reveal');
-  els.forEach(function(el){ el.classList.add('visible'); });
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.05 });
-  els.forEach(function(el){ obs.observe(el); });
-}
-function handleSubmit() {
-  var name = document.getElementById('f-name').value.trim();
-  var email = document.getElementById('f-email').value.trim();
-  var company = document.getElementById('f-company').value.trim();
-  var type = document.getElementById('f-type').value;
-  var message = document.getElementById('f-message').value.trim();
-  var status = document.getElementById('form-status');
-  if (!name || !email) {
-    status.innerHTML = '<p style="color:#e74c3c;margin-bottom:12px;">※ お名前とメールアドレスは必須です。</p>';
-    return;
-  }
-  var btn = document.querySelector('.form-submit');
-  btn.disabled = true;
-  btn.textContent = '送信中...';
-  status.innerHTML = '';
-  fetch('https://formspree.io/f/mnjgpelk', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({ name: name, email: email, company: company, type: type, message: message })
-  }).then(function(res) {
-    if (res.ok) {
-      status.innerHTML = '<p style="color:#C9A84C;margin-bottom:12px;">✓ 送信が完了しました。1〜2営業日以内にご返信いたします。</p>';
-      document.getElementById('f-name').value = '';
-      document.getElementById('f-company').value = '';
-      document.getElementById('f-email').value = '';
-      document.getElementById('f-type').value = '';
-      document.getElementById('f-message').value = '';
-      btn.textContent = '送信完了 ✓';
-    } else {
-      status.innerHTML = '<p style="color:#e74c3c;margin-bottom:12px;">送信に失敗しました。時間をおいて再度お試しください。</p>';
-      btn.disabled = false;
-      btn.textContent = '送信する →';
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* =====================================================
+   SUI — ANIMATION ENGINE v6
+   ===================================================== */
+
+function easeInOut(t){return t<0.5?2*t*t:-1+(4-2*t)*t;}
+function easeOut(t){return 1-(1-t)*(1-t);}
+
+/* =====================================================
+   GLOBAL FIREWORK SYSTEM
+   ===================================================== */
+var GlobalFW=(function(){
+  var cv=document.getElementById('global-fw-canvas');
+  var ctx=cv?cv.getContext('2d'):null;
+  var W=0,H=0,fw=[],raf=null;
+  function resize(){if(!cv)return;W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;}
+  function launch(x,y){
+    if(!ctx)return;
+    var cols=[[240,201,106],[255,255,255],[255,220,100],[201,168,76],[220,200,255],[160,240,180]];
+    var n=24+Math.floor(Math.random()*16);
+    for(var i=0;i<n;i++){
+      var a=(Math.PI*2/n)*i+(Math.random()-0.5)*0.5,sp=Math.random()*4.5+1.5;
+      var c=cols[Math.floor(Math.random()*cols.length)];
+      fw.push({x:x,y:y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,r:Math.random()*2.2+0.8,op:1,decay:Math.random()*0.016+0.013,c:c,trail:[],grav:0.055});
     }
-  }).catch(function() {
-    status.innerHTML = '<p style="color:#e74c3c;margin-bottom:12px;">通信エラーが発生しました。ネットワークをご確認ください。</p>';
-    btn.disabled = false;
-    btn.textContent = '送信する →';
+    fw.push({x:x,y:y,vx:0,vy:0,r:14,op:0.9,decay:0.06,c:[255,230,120],trail:[],grav:0,flash:true});
+    if(!raf)raf=requestAnimationFrame(draw);
+  }
+  function draw(){
+    if(!ctx)return;
+    ctx.clearRect(0,0,W,H);
+    for(var fi=fw.length-1;fi>=0;fi--){
+      var f=fw[fi];if(f.op<=0){fw.splice(fi,1);continue;}
+      f.trail.push({x:f.x,y:f.y,op:f.op});if(f.trail.length>6)f.trail.shift();
+      if(!f.flash){for(var tj=0;tj<f.trail.length;tj++){var tr=f.trail[tj],trop=tr.op*(tj/f.trail.length)*0.35;ctx.beginPath();ctx.arc(tr.x,tr.y,f.r*0.5,0,Math.PI*2);ctx.fillStyle='rgba('+f.c[0]+','+f.c[1]+','+f.c[2]+','+trop+')';ctx.fill();}}
+      if(f.flash){var fg=ctx.createRadialGradient(f.x,f.y,0,f.x,f.y,f.r);fg.addColorStop(0,'rgba('+f.c[0]+','+f.c[1]+','+f.c[2]+','+f.op+')');fg.addColorStop(1,'rgba('+f.c[0]+','+f.c[1]+','+f.c[2]+',0)');ctx.beginPath();ctx.arc(f.x,f.y,f.r,0,Math.PI*2);ctx.fillStyle=fg;}
+      else{ctx.beginPath();ctx.arc(f.x,f.y,f.r,0,Math.PI*2);ctx.fillStyle='rgba('+f.c[0]+','+f.c[1]+','+f.c[2]+','+f.op+')';}
+      ctx.fill();f.x+=f.vx;f.y+=f.vy;f.vy+=f.grav;f.op-=f.decay;
+    }
+    if(fw.length>0){raf=requestAnimationFrame(draw);}else{raf=null;ctx.clearRect(0,0,W,H);}
+  }
+  window.addEventListener('resize',resize);resize();
+  document.addEventListener('click',function(e){
+    var ol=document.getElementById('intro-overlay');
+    if(ol&&ol.style.display!=='none'&&ol.style.opacity!=='0')return;
+    launch(e.clientX,e.clientY);
+    setTimeout(function(){launch(e.clientX+(Math.random()-0.5)*30,e.clientY+(Math.random()-0.5)*30);},100);
+  });
+  return{launch:launch};
+})();
+
+
+/* =====================================================
+   PAGE TRANSITION v2（泡＋流れ星）
+   金・銀・白・薄黄・薄黒・薄金・薄銀 7色
+   ===================================================== */
+var PageTransition=(function(){
+  var cv=document.getElementById('transition-canvas');
+  var ctx=cv?cv.getContext('2d'):null;
+  var W=0,H=0,pts=[],stars=[],raf=null,phase=0;
+  var callback=null,elapsed=0,lastT2=0;
+
+  // 7カラーパレット
+  var COLS={
+    gold:    function(){return [235+rnd(20), 190+rnd(25),  60+rnd(30)];},  // ゴールド
+    silver:  function(){return [200+rnd(30), 205+rnd(30), 215+rnd(20)];},  // シルバー
+    white:   function(){return [235+rnd(20), 238+rnd(17), 245+rnd(10)];},  // 白
+    lyellow: function(){return [250+rnd(5),  240+rnd(15), 160+rnd(40)];},  // 薄黄
+    lblack:  function(){return [ 30+rnd(20),  28+rnd(18),  18+rnd(12)];},  // 薄黒（暗い金）
+    lgold:   function(){return [220+rnd(20), 185+rnd(20), 120+rnd(30)];},  // 薄金
+    lsilver: function(){return [180+rnd(30), 185+rnd(30), 195+rnd(25)];}   // 薄銀
+  };
+  var COL_KEYS=Object.keys(COLS);
+  function rnd(n){return Math.floor(Math.random()*n);}
+  function randCol(){return COLS[COL_KEYS[Math.floor(Math.random()*COL_KEYS.length)]]();}
+  // 重み付き：金・白・薄金を多めに
+  function weightedCol(){
+    var r=Math.random();
+    if(r<0.28)return COLS.gold();
+    if(r<0.46)return COLS.white();
+    if(r<0.60)return COLS.lgold();
+    if(r<0.72)return COLS.silver();
+    if(r<0.82)return COLS.lyellow();
+    if(r<0.91)return COLS.lsilver();
+    return COLS.lblack();
+  }
+
+  function resize(){
+    if(!cv)return;
+    W=cv.width=window.innerWidth;
+    H=cv.height=window.innerHeight;
+  }
+
+  /* ── 泡スポーン ── */
+  function spawnBubbles(){
+    pts=[];
+    var n=110+Math.floor(Math.random()*50);
+    for(var i=0;i<n;i++){
+      var col=weightedCol();
+      var maxR=Math.random()*20+6;
+      pts.push({
+        x:Math.random()*W, y:Math.random()*H,
+        vx:(Math.random()-0.5)*5,
+        vy:(Math.random()-0.5)*5-(Math.random()*1.2),
+        r:maxR*0.2, maxR:maxR,
+        op:0, growing:true,
+        growSpeed:Math.random()*0.07+0.03,
+        fadeSpeed:Math.random()*0.03+0.012,
+        col:col,
+        delay:Math.random()*0.22
+      });
+    }
+  }
+
+  /* ── 流れ星スポーン ── */
+  function spawnStars(){
+    stars=[];
+    // 画面全体を埋める本数：対角線を分割するイメージ
+    var n=55+Math.floor(Math.random()*25);
+    for(var i=0;i<n;i++){
+      // 4辺からランダムに飛んでくる
+      var side=Math.floor(Math.random()*4);
+      var sx,sy,angle;
+      if(side===0){sx=Math.random()*W;sy=-10;angle=Math.PI*0.5+(Math.random()-0.5)*1.0;}
+      else if(side===1){sx=Math.random()*W;sy=H+10;angle=-Math.PI*0.5+(Math.random()-0.5)*1.0;}
+      else if(side===2){sx=-10;sy=Math.random()*H;angle=(Math.random()-0.5)*1.0;}
+      else{sx=W+10;sy=Math.random()*H;angle=Math.PI+(Math.random()-0.5)*1.0;}
+      // 速度：0.4秒でだいたい画面を横断できる量（px/s）
+      var spd=(W+H)*0.5*(1.8+Math.random()*1.4);
+      var col=weightedCol();
+      var len=80+Math.random()*160; // 固定px長（大きめ）
+      stars.push({
+        x:sx, y:sy,
+        vx:Math.cos(angle)*spd,
+        vy:Math.sin(angle)*spd,
+        len:len,
+        op:0, fadeIn:true,
+        life:0,
+        maxLife:999, // 寿命は画面外に出た時点で削除
+        col:col,
+        lw:Math.random()*2.2+0.8,
+        delay:Math.random()*0.30
+      });
+    }
+  }
+
+  function draw(t){
+    if(!ctx)return;
+    if(!lastT2)lastT2=t;
+    var dt=Math.min((t-lastT2)/1000,0.05);lastT2=t;
+    elapsed+=dt;
+    ctx.clearRect(0,0,W,H);
+
+    var anyAlive=false;
+
+    /* ── 泡描画 ── */
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];
+      if(elapsed<p.delay)continue;
+      var localT=elapsed-p.delay;
+
+      if(phase===1||phase===2){
+        if(p.growing){
+          p.r=Math.min(p.r+p.maxR*p.growSpeed*7*dt, p.maxR);
+          p.op=Math.min(p.op+p.growSpeed*5.5, 0.88);
+          if(p.r>=p.maxR*0.97)p.growing=false;
+        }
+      }
+      if(phase===3){
+        p.x+=p.vx*dt*38;
+        p.y+=p.vy*dt*38;
+        p.op=Math.max(p.op-p.fadeSpeed*1.4, 0);
+        p.r=Math.max(p.r-p.maxR*0.035, 0.5);
+      }
+
+      if(p.op>0.01){
+        anyAlive=true;
+        var gr=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r);
+        gr.addColorStop(0,'rgba('+p.col[0]+','+p.col[1]+','+p.col[2]+','+p.op+')');
+        gr.addColorStop(0.55,'rgba('+p.col[0]+','+p.col[1]+','+p.col[2]+','+(p.op*0.45)+')');
+        gr.addColorStop(1,'rgba('+p.col[0]+','+p.col[1]+','+p.col[2]+',0)');
+        ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle=gr;ctx.fill();
+      }
+    }
+
+    /* ── 流れ星描画 ── */
+    for(var si=stars.length-1;si>=0;si--){
+      var s=stars[si];
+      if(elapsed<s.delay)continue;
+      s.life++;
+      s.x+=s.vx*dt;
+      s.y+=s.vy*dt;
+
+      if(s.fadeIn){
+        s.op=Math.min(s.op+0.09, 0.95);
+        if(s.op>=0.95)s.fadeIn=false;
+      }
+      if(phase===3){
+        s.op=Math.max(s.op-0.04, 0);
+      }
+      // 先端が画面の外に完全に出たら削除
+      if(s.op<=0||(s.x<-s.len-50&&s.vx<0)||(s.x>W+s.len+50&&s.vx>0)||(s.y<-s.len-50&&s.vy<0)||(s.y>H+s.len+50&&s.vy>0)){
+        stars.splice(si,1);continue;
+      }
+
+      anyAlive=true;
+      var speed=Math.sqrt(s.vx*s.vx+s.vy*s.vy);
+      var nx=s.vx/speed, ny=s.vy/speed;
+      var tx=s.x-nx*s.len, ty=s.y-ny*s.len;
+
+      var stg=ctx.createLinearGradient(tx,ty,s.x,s.y);
+      stg.addColorStop(0,'rgba('+s.col[0]+','+s.col[1]+','+s.col[2]+',0)');
+      stg.addColorStop(0.4,'rgba('+s.col[0]+','+s.col[1]+','+s.col[2]+','+(s.op*0.5)+')');
+      stg.addColorStop(1,'rgba('+s.col[0]+','+s.col[1]+','+s.col[2]+','+s.op+')');
+      ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(s.x,s.y);
+      ctx.strokeStyle=stg;ctx.lineWidth=s.lw;ctx.stroke();
+
+      // 先端グロー
+      var halo=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.lw*3);
+      halo.addColorStop(0,'rgba('+s.col[0]+','+s.col[1]+','+s.col[2]+','+s.op+')');
+      halo.addColorStop(1,'rgba('+s.col[0]+','+s.col[1]+','+s.col[2]+',0)');
+      ctx.beginPath();ctx.arc(s.x,s.y,s.lw*3,0,Math.PI*2);
+      ctx.fillStyle=halo;ctx.fill();
+    }
+
+    /* ── フェーズ進行 ── */
+    if(phase===1 && elapsed>0.30){
+      phase=2;
+      if(callback){callback();callback=null;}
+    }
+    if(phase===2 && elapsed>0.50){
+      phase=3;
+    }
+    if(phase===3 && !anyAlive){
+      phase=0;
+      cv.style.opacity='0';
+      if(raf){cancelAnimationFrame(raf);raf=null;}
+      return;
+    }
+
+    raf=requestAnimationFrame(draw);
+  }
+
+  function run(cb){
+    if(!cv||!ctx){cb();return;}
+    if(typeof FilmCountdown!=='undefined'){
+      FilmCountdown.show(function(){
+        resize();callback=cb;
+        phase=1;elapsed=0;lastT2=0;
+        spawnBubbles();spawnStars();
+        cv.style.opacity='1';
+        if(raf)cancelAnimationFrame(raf);
+        raf=requestAnimationFrame(draw);
+      });
+      return;
+    }
+    resize();
+    callback=cb;
+    phase=1;elapsed=0;lastT2=0;
+    spawnBubbles();spawnStars();
+    cv.style.opacity='1';
+    if(raf)cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize',resize);
+  return{run:run};
+})();
+
+
+/* =====================================================
+   1. INTRO ANIMATION
+   ===================================================== */
+(function(){
+  var overlay=document.getElementById('intro-overlay');
+  var logo=document.getElementById('intro-logo');
+  var tagline=document.getElementById('intro-tagline');
+  var ic=document.getElementById('intro-canvas');
+  if(!overlay||!logo||!ic)return;
+  var ctx=ic.getContext('2d'),W=0,H=0,pts=[],waves=[],iRaf=null,opacity=0;
+  function resize(){W=ic.width=window.innerWidth;H=ic.height=window.innerHeight;waves=[];for(var i=0;i<3;i++)waves.push({amp:20+i*10,freq:0.004+i*0.002,spd:0.5+i*0.3,phase:(Math.PI*2/3)*i,y:H*(0.33+i*0.14),op:0.07-i*0.015,lw:1.1-i*0.2});}
+  function spawnPt(rand){pts.push({x:rand?Math.random()*W:(Math.random()<0.5?-5:W+5),y:rand?Math.random()*H:Math.random()*H,vx:(Math.random()-0.5)*0.3,vy:-(Math.random()*0.55+0.12),r:Math.random()*2+0.3,op:Math.random()*0.65+0.15,ph:Math.random()*Math.PI*2,ps:Math.random()*0.022+0.007,gold:Math.random()>0.42});}
+  function initPts(){pts=[];var n=Math.min(Math.max(Math.floor(W*H/5000),60),180);for(var i=0;i<n;i++)spawnPt(true);}
+  var lastT=0;
+  function draw(t){
+    if(!lastT)lastT=t;var dt=Math.min((t-lastT)/1000,0.05);lastT=t;
+    ctx.clearRect(0,0,W,H);ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);
+    ctx.save();ctx.globalAlpha=Math.min(Math.max(opacity,0),1);
+    for(var wi=0;wi<waves.length;wi++){var wv=waves[wi];wv.phase+=wv.spd*dt;ctx.beginPath();ctx.moveTo(0,wv.y);for(var x=0;x<=W;x+=3){ctx.lineTo(x,wv.y+Math.sin(x*wv.freq+wv.phase)*wv.amp+Math.sin(x*wv.freq*2.1+wv.phase*1.4)*(wv.amp*0.3));}var g=ctx.createLinearGradient(0,0,W,0);g.addColorStop(0,'rgba(201,168,76,0)');g.addColorStop(0.3,'rgba(201,168,76,'+wv.op+')');g.addColorStop(0.5,'rgba(240,201,106,'+(wv.op*1.5)+')');g.addColorStop(0.7,'rgba(201,168,76,'+wv.op+')');g.addColorStop(1,'rgba(201,168,76,0)');ctx.strokeStyle=g;ctx.lineWidth=wv.lw;ctx.stroke();}
+    for(var pi=pts.length-1;pi>=0;pi--){var p=pts[pi];p.x+=p.vx;p.y+=p.vy;p.ph+=p.ps;if(p.y<-12||p.x<-25||p.x>W+25){pts.splice(pi,1);spawnPt(false);continue;}var op2=p.op*(0.68+0.32*Math.sin(p.ph));if(p.gold){var gr=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3.8);gr.addColorStop(0,'rgba(240,201,106,'+op2+')');gr.addColorStop(0.5,'rgba(201,168,76,'+(op2*0.35)+')');gr.addColorStop(1,'rgba(201,168,76,0)');ctx.beginPath();ctx.arc(p.x,p.y,p.r*3.8,0,Math.PI*2);ctx.fillStyle=gr;}else{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+(op2*0.45)+')';}ctx.fill();}
+    var phase2=(t*0.00016)%1,sy=phase2*(H+200)-100;var sg=ctx.createLinearGradient(0,sy-60,0,sy+60);sg.addColorStop(0,'rgba(201,168,76,0)');sg.addColorStop(0.5,'rgba(240,201,106,0.05)');sg.addColorStop(1,'rgba(201,168,76,0)');ctx.fillStyle=sg;ctx.fillRect(0,sy-60,W,120);
+    ctx.restore();iRaf=requestAnimationFrame(draw);
+  }
+  function startIntro(){
+    resize();initPts();iRaf=requestAnimationFrame(draw);
+    setTimeout(function(){var s=performance.now();(function fi(now){var p=Math.min((now-s)/1200,1);opacity=easeInOut(p);if(p<1)requestAnimationFrame(fi);})(s);},700);
+    setTimeout(function(){logo.style.transition='opacity 1.0s ease,transform 1.0s ease';logo.style.opacity='1';logo.style.transform='scale(1)';},2000);
+    setTimeout(function(){tagline.style.transition='opacity 0.8s ease';tagline.style.opacity='1';},2900);
+    setTimeout(function(){
+      var navEl=document.querySelector('.nav-logo');var nr=navEl?navEl.getBoundingClientRect():{left:20,top:12,width:60,height:36};
+      var lw=logo.offsetWidth,lh=logo.offsetHeight;
+      logo.style.position='fixed';logo.style.left=(W/2-lw/2)+'px';logo.style.top=(H/2-lh/2)+'px';
+      logo.style.margin='0';logo.style.transition='none';logo.style.transform='scale(1)';logo.style.transformOrigin='top left';
+      requestAnimationFrame(function(){
+        logo.style.transition='left 1.6s cubic-bezier(0.16,1,0.3,1),top 1.6s cubic-bezier(0.16,1,0.3,1),transform 1.6s cubic-bezier(0.16,1,0.3,1),opacity 0.8s ease 0.9s,letter-spacing 1.4s ease';
+        logo.style.left=nr.left+'px';logo.style.top=nr.top+'px';logo.style.transform='scale('+(nr.height/lh*0.85)+')';logo.style.letterSpacing='5px';
+      });
+      tagline.style.transition='opacity 0.5s ease';tagline.style.opacity='0';
+      setTimeout(function(){overlay.style.transition='opacity 1.0s ease';overlay.style.opacity='0';setTimeout(function(){overlay.style.display='none';if(iRaf)cancelAnimationFrame(iRaf);logo.style.display='none';},1050);},900);
+    },3800);
+  }
+  window.addEventListener('resize',resize);window.addEventListener('load',startIntro);
+})();
+
+
+/* =====================================================
+   2. HERO CANVAS
+   ===================================================== */
+var HeroAnim=(function(){
+  var cv,ctx,W=0,H=0,pts=[],waves=[],glitch=80,raf=null,running=false,lastT=0;
+  var noiseCV,noiseCtx,noiseEl,noiseInit=false;
+  function resize(){var hero=document.querySelector('.hero');if(!hero||!cv)return;W=cv.width=hero.offsetWidth;H=cv.height=hero.offsetHeight;initWaves();}
+  function initPts(){pts=[];var n=Math.min(Math.max(Math.floor(W*H/5500),55),160);for(var i=0;i<n;i++)spawn(true);}
+  function spawn(rand){pts.push({x:rand?Math.random()*W:(Math.random()<0.5?-5:W+5),y:rand?Math.random()*H:Math.random()*H,vx:(Math.random()-0.5)*0.3,vy:-(Math.random()*0.55+0.12),r:Math.random()*2+0.3,op:Math.random()*0.65+0.15,ph:Math.random()*Math.PI*2,ps:Math.random()*0.022+0.007,gold:Math.random()>0.42});}
+  function initWaves(){waves=[];for(var i=0;i<3;i++)waves.push({amp:18+i*9,freq:0.004+i*0.002,spd:0.5+i*0.3,phase:(Math.PI*2/3)*i,y:H*(0.33+i*0.14),op:0.065-i*0.014,lw:1.1-i*0.2});}
+  function draw(t){
+    if(!running)return;if(!lastT)lastT=t;var dt=Math.min((t-lastT)/1000,0.05);lastT=t;
+    ctx.clearRect(0,0,W,H);
+    for(var wi=0;wi<waves.length;wi++){var wv=waves[wi];wv.phase+=wv.spd*dt;ctx.beginPath();ctx.moveTo(0,wv.y);for(var x=0;x<=W;x+=3){ctx.lineTo(x,wv.y+Math.sin(x*wv.freq+wv.phase)*wv.amp+Math.sin(x*wv.freq*2.1+wv.phase*1.4)*(wv.amp*0.3));}var g=ctx.createLinearGradient(0,0,W,0);g.addColorStop(0,'rgba(201,168,76,0)');g.addColorStop(0.3,'rgba(201,168,76,'+wv.op+')');g.addColorStop(0.5,'rgba(240,201,106,'+(wv.op*1.5)+')');g.addColorStop(0.7,'rgba(201,168,76,'+wv.op+')');g.addColorStop(1,'rgba(201,168,76,0)');ctx.strokeStyle=g;ctx.lineWidth=wv.lw;ctx.stroke();}
+    for(var pi=pts.length-1;pi>=0;pi--){var p=pts[pi];p.x+=p.vx;p.y+=p.vy;p.ph+=p.ps;if(p.y<-12||p.x<-25||p.x>W+25){pts.splice(pi,1);spawn(false);continue;}var op=p.op*(0.68+0.32*Math.sin(p.ph));if(p.gold){var gr=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3.8);gr.addColorStop(0,'rgba(240,201,106,'+op+')');gr.addColorStop(0.5,'rgba(201,168,76,'+(op*0.35)+')');gr.addColorStop(1,'rgba(201,168,76,0)');ctx.beginPath();ctx.arc(p.x,p.y,p.r*3.8,0,Math.PI*2);ctx.fillStyle=gr;}else{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+(op*0.45)+')';}ctx.fill();}
+    var sw=(t*0.00016)%1,sy=sw*(H+200)-100;var sg=ctx.createLinearGradient(0,sy-60,0,sy+60);sg.addColorStop(0,'rgba(201,168,76,0)');sg.addColorStop(0.5,'rgba(240,201,106,0.05)');sg.addColorStop(1,'rgba(201,168,76,0)');ctx.fillStyle=sg;ctx.fillRect(0,sy-60,W,120);
+    glitch--;if(glitch<=0){glitch=140+Math.floor(Math.random()*280);try{var gy=Math.random()*H,gh=Math.random()*2.5+0.8,id=ctx.getImageData(0,gy,W,gh);ctx.putImageData(id,(Math.random()-0.5)*10,gy);ctx.fillStyle='rgba(240,201,106,'+(Math.random()*0.1)+')';ctx.fillRect(0,gy,W,gh);}catch(e){}}
+    raf=requestAnimationFrame(draw);
+  }
+  function setupNoise(){noiseCV=document.createElement('canvas');noiseCV.width=noiseCV.height=256;noiseCtx=noiseCV.getContext('2d');noiseEl=document.getElementById('hero-noise');setInterval(function(){if(!running)return;var id=noiseCtx.createImageData(256,256),d=id.data;for(var n=0;n<d.length;n+=4){var v=Math.random()*255|0;d[n]=d[n+1]=d[n+2]=v;d[n+3]=Math.random()*20|0;}noiseCtx.putImageData(id,0,0);if(noiseEl){noiseEl.style.backgroundImage='url('+noiseCV.toDataURL()+')';noiseEl.style.backgroundSize='256px 256px';noiseEl.style.opacity=(0.025+Math.random()*0.025).toFixed(3);}},90);}
+  function start(){cv=document.getElementById('hero-canvas');if(!cv)return;ctx=cv.getContext('2d');running=true;lastT=0;resize();initPts();if(!noiseInit){noiseInit=true;setupNoise();}if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(draw);}
+  function stop(){running=false;if(raf){cancelAnimationFrame(raf);raf=null;}lastT=0;}
+  window.addEventListener('resize',function(){if(!running)return;resize();initPts();});
+  return{start:start,stop:stop};
+})();
+
+
+/* =====================================================
+   3. SUB-HERO CANVAS
+   ===================================================== */
+var SubHeroAnim=(function(){
+  function createAnim(cv){
+    var ctx=cv.getContext('2d'),W=0,H=0,pts=[],waves=[],glitch=80,raf=null,running=false,lastT=0;
+    function resize(){var p=cv.parentElement;W=cv.width=p.offsetWidth;H=cv.height=p.offsetHeight;waves=[];for(var i=0;i<2;i++)waves.push({amp:12+i*6,freq:0.005+i*0.002,spd:0.4+i*0.3,phase:(Math.PI)*i,y:H*(0.4+i*0.2),op:0.055-i*0.01,lw:0.9-i*0.15});}
+    function initPts(){pts=[];var n=Math.min(Math.max(Math.floor(W*H/8000),30),80);for(var i=0;i<n;i++)sp(true);}
+    function sp(rand){pts.push({x:rand?Math.random()*W:(Math.random()<0.5?-5:W+5),y:rand?Math.random()*H:Math.random()*H,vx:(Math.random()-0.5)*0.25,vy:-(Math.random()*0.4+0.1),r:Math.random()*1.8+0.3,op:Math.random()*0.55+0.1,ph:Math.random()*Math.PI*2,ps:Math.random()*0.02+0.007,gold:Math.random()>0.4});}
+    function draw(t){
+      if(!running)return;if(!lastT)lastT=t;var dt=Math.min((t-lastT)/1000,0.05);lastT=t;
+      ctx.clearRect(0,0,W,H);
+      for(var wi=0;wi<waves.length;wi++){var wv=waves[wi];wv.phase+=wv.spd*dt;ctx.beginPath();ctx.moveTo(0,wv.y);for(var x=0;x<=W;x+=4){ctx.lineTo(x,wv.y+Math.sin(x*wv.freq+wv.phase)*wv.amp);}var g=ctx.createLinearGradient(0,0,W,0);g.addColorStop(0,'rgba(201,168,76,0)');g.addColorStop(0.3,'rgba(201,168,76,'+wv.op+')');g.addColorStop(0.5,'rgba(240,201,106,'+(wv.op*1.5)+')');g.addColorStop(0.7,'rgba(201,168,76,'+wv.op+')');g.addColorStop(1,'rgba(201,168,76,0)');ctx.strokeStyle=g;ctx.lineWidth=wv.lw;ctx.stroke();}
+      for(var pi=pts.length-1;pi>=0;pi--){var p=pts[pi];p.x+=p.vx;p.y+=p.vy;p.ph+=p.ps;if(p.y<-12||p.x<-25||p.x>W+25){pts.splice(pi,1);sp(false);continue;}var op=p.op*(0.68+0.32*Math.sin(p.ph));if(p.gold){var gr=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3.5);gr.addColorStop(0,'rgba(240,201,106,'+op+')');gr.addColorStop(0.5,'rgba(201,168,76,'+(op*0.3)+')');gr.addColorStop(1,'rgba(201,168,76,0)');ctx.beginPath();ctx.arc(p.x,p.y,p.r*3.5,0,Math.PI*2);ctx.fillStyle=gr;}else{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+(op*0.4)+')';}ctx.fill();}
+      glitch--;if(glitch<=0){glitch=150+Math.floor(Math.random()*300);try{var gy=Math.random()*H,gh=Math.random()*2+0.8,id=ctx.getImageData(0,gy,W,gh);ctx.putImageData(id,(Math.random()-0.5)*8,gy);ctx.fillStyle='rgba(240,201,106,'+(Math.random()*0.08)+')';ctx.fillRect(0,gy,W,gh);}catch(e){}}
+      var sw=(t*0.00014)%1,sy=sw*(H+150)-75;var sg=ctx.createLinearGradient(0,sy-50,0,sy+50);sg.addColorStop(0,'rgba(201,168,76,0)');sg.addColorStop(0.5,'rgba(240,201,106,0.04)');sg.addColorStop(1,'rgba(201,168,76,0)');ctx.fillStyle=sg;ctx.fillRect(0,sy-50,W,100);
+      raf=requestAnimationFrame(draw);
+    }
+    function start(){running=true;lastT=0;resize();initPts();if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(draw);}
+    function stop(){running=false;if(raf){cancelAnimationFrame(raf);raf=null;}lastT=0;}
+    window.addEventListener('resize',function(){if(running){resize();initPts();}});
+    return{start:start,stop:stop};
+  }
+  function startAll(pg){pg.querySelectorAll('.sub-hero-canvas').forEach(function(cv){if(!cv._a)cv._a=createAnim(cv);cv._a.start();});}
+  function stopAll(pg){pg.querySelectorAll('.sub-hero-canvas').forEach(function(cv){if(cv._a)cv._a.stop();});}
+  return{startAll:startAll,stopAll:stopAll};
+})();
+
+
+/* =====================================================
+   4. CTA-BAND CANVAS（流れ星＋ゴールドシフト）
+   ===================================================== */
+function initCtaBands(){
+  document.querySelectorAll('.cta-band').forEach(function(band){
+    var cv=band.querySelector('.cta-canvas');if(!cv)return;
+    var ctx=cv.getContext('2d'),W=0,H=0,pts=[],stars=[],raf=null,lastT=0,startTime=Date.now();
+    function resize(){W=cv.width=band.offsetWidth;H=cv.height=band.offsetHeight;}
+    function spPt(rand){var gold=Math.random()>0.38;pts.push({x:rand?Math.random()*W:(Math.random()<0.5?-5:W+5),y:rand?Math.random()*H:Math.random()*H,vx:(Math.random()-0.5)*0.35,vy:-(Math.random()*0.5+0.1),r:Math.random()*2.2+0.4,op:Math.random()*0.75+0.2,ph:Math.random()*Math.PI*2,ps:Math.random()*0.025+0.008,gold:gold});}
+    function initPts(){pts=[];var n=Math.min(Math.max(Math.floor(W*H/3500),40),120);for(var i=0;i<n;i++)spPt(true);}
+    function spawnStar(){var goRight=Math.random()<0.5;stars.push({x:goRight?-40:W+40,y:Math.random()*H*0.75,vx:goRight?(2.5+Math.random()*3):-(2.5+Math.random()*3),vy:(Math.random()*1.2+0.3)*(Math.random()<0.5?1:-1),len:50+Math.random()*90,op:0,fadeIn:true,life:0,maxLife:90+Math.floor(Math.random()*70),bright:Math.random()>0.45});}
+    var starTimer=0;
+    function getColors(age){var p=Math.min(age/90,1);var r=Math.round(240-(240-201)*p);var g=Math.round(210-(210-168)*p);var b=Math.round(80-(80-76)*p);return{main:'rgba('+r+','+g+','+b+',',white:'rgba(255,255,255,'};}
+    function draw(t){
+      if(!lastT)lastT=t;var dt=Math.min((t-lastT)/1000,0.05);lastT=t;
+      var age=(Date.now()-startTime)/1000;var cols=getColors(age);
+      ctx.clearRect(0,0,W,H);
+      var p2=Math.min(age/90,1);var c1r=Math.round(10+(20-10)*p2);var c1g=Math.round(8+(16-8)*p2);var c1b=Math.round(0+(3-0)*p2);
+      var bg=ctx.createLinearGradient(0,0,W,H);bg.addColorStop(0,'rgba('+c1r+','+c1g+','+c1b+',1)');bg.addColorStop(0.4,'rgba('+(c1r+8)+','+(c1g+6)+','+c1b+',1)');bg.addColorStop(0.6,'rgba('+(c1r+12)+','+(c1g+8)+','+c1b+',1)');bg.addColorStop(1,'rgba('+c1r+','+c1g+','+c1b+',1)');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+      for(var si=0;si<2;si++){var ph=(t*0.0003*(si+1))%(Math.PI*2);var amp2=12+si*8,yb=H*(0.35+si*0.3),opW=0.12-si*0.04;ctx.beginPath();ctx.moveTo(0,yb);for(var x=0;x<=W;x+=3)ctx.lineTo(x,yb+Math.sin(x*0.005+ph)*amp2);var wg=ctx.createLinearGradient(0,0,W,0);wg.addColorStop(0,cols.white+'0)');wg.addColorStop(0.3,cols.white+(opW*0.6)+')');wg.addColorStop(0.5,cols.main+(opW*1.2)+')');wg.addColorStop(0.7,cols.white+(opW*0.6)+')');wg.addColorStop(1,cols.white+'0)');ctx.strokeStyle=wg;ctx.lineWidth=0.8;ctx.stroke();}
+      for(var pi=pts.length-1;pi>=0;pi--){var p=pts[pi];p.x+=p.vx;p.y+=p.vy;p.ph+=p.ps;if(p.y<-10||p.x<-20||p.x>W+20){pts.splice(pi,1);spPt(false);continue;}var op=p.op*(0.65+0.35*Math.sin(p.ph));if(p.gold){var gr=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);gr.addColorStop(0,cols.main+op+')');gr.addColorStop(0.5,cols.main+(op*0.3)+')');gr.addColorStop(1,cols.main+'0)');ctx.beginPath();ctx.arc(p.x,p.y,p.r*4,0,Math.PI*2);ctx.fillStyle=gr;}else{var gr2=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3.5);gr2.addColorStop(0,cols.white+op+')');gr2.addColorStop(1,cols.white+'0)');ctx.beginPath();ctx.arc(p.x,p.y,p.r*3.5,0,Math.PI*2);ctx.fillStyle=gr2;}ctx.fill();}
+      starTimer--;if(starTimer<=0){starTimer=90+Math.floor(Math.random()*120);spawnStar();}
+      for(var sti=stars.length-1;sti>=0;sti--){var s=stars[sti];s.life++;s.x+=s.vx;s.y+=s.vy;if(s.fadeIn){s.op=Math.min(s.op+0.07,0.95);if(s.op>=0.95)s.fadeIn=false;}else{s.op=Math.max(s.op-0.014,0);}if(s.life>s.maxLife||s.op<=0||s.x<-150||s.x>W+150){stars.splice(sti,1);continue;}var speed=Math.sqrt(s.vx*s.vx+s.vy*s.vy);var tailX=s.x-s.vx*(s.len/speed),tailY=s.y-s.vy*(s.len/speed);var stg=ctx.createLinearGradient(tailX,tailY,s.x,s.y);stg.addColorStop(0,'rgba(255,255,255,0)');stg.addColorStop(0.5,cols.white+(s.op*0.45)+')');stg.addColorStop(1,cols.white+s.op+')');ctx.beginPath();ctx.moveTo(tailX,tailY);ctx.lineTo(s.x,s.y);ctx.strokeStyle=stg;ctx.lineWidth=s.bright?1.8:1.1;ctx.stroke();var halo=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.bright?4:2.5);halo.addColorStop(0,cols.white+s.op+')');halo.addColorStop(1,cols.white+'0)');ctx.beginPath();ctx.arc(s.x,s.y,s.bright?4:2.5,0,Math.PI*2);ctx.fillStyle=halo;ctx.fill();}
+      var sw2=(t*0.00014)%1,sy2=sw2*(H+150)-75;var sg2=ctx.createLinearGradient(0,sy2-50,0,sy2+50);sg2.addColorStop(0,cols.white+'0)');sg2.addColorStop(0.5,cols.white+'0.035)');sg2.addColorStop(1,cols.white+'0)');ctx.fillStyle=sg2;ctx.fillRect(0,sy2-50,W,100);
+      raf=requestAnimationFrame(draw);
+    }
+    resize();initPts();raf=requestAnimationFrame(draw);
+    window.addEventListener('resize',function(){resize();initPts();});
   });
 }
-showPage('home');
-initReveal();
+
+
+/* =====================================================
+   5. LINE-CTA CANVAS（黒背景×グリーン＋白 泡+流れ星）
+   ===================================================== */
+function initLineCanvas(){
+  document.querySelectorAll('.line-canvas').forEach(function(cv){
+    var ctx=cv.getContext('2d'),W=0,H=0,pts=[],stars=[],raf=null,lastT=0;
+    var starTimer=0;
+    function resize(){var p=cv.parentElement;W=cv.width=p.offsetWidth;H=cv.height=p.offsetHeight;}
+    function spPt(rand){
+      var t=Math.random();
+      var col=t<0.45?[255,255,255]:t<0.8?[6,199,85]:[180,255,200];
+      pts.push({x:rand?Math.random()*W:(Math.random()<0.5?-4:W+4),y:rand?Math.random()*H:H+5,
+        vx:(Math.random()-0.5)*0.28,vy:-(Math.random()*0.5+0.08),
+        r:Math.random()*2+0.3,op:Math.random()*0.85+0.2,
+        ph:Math.random()*Math.PI*2,ps:Math.random()*0.025+0.008,c:col});
+    }
+    function spawnStar(){
+      var goRight=Math.random()<0.5;
+      stars.push({
+        x:goRight?-20:W+20,y:Math.random()*H,
+        vx:goRight?(2+Math.random()*2.5):-(2+Math.random()*2.5),
+        vy:(Math.random()*0.8+0.2)*(Math.random()<0.5?1:-1),
+        len:30+Math.random()*50,op:0,fadeIn:true,
+        life:0,maxLife:70+Math.floor(Math.random()*50),
+        col:Math.random()>0.45?[255,255,255]:[180,255,200]
+      });
+    }
+    function draw(t){
+      if(!lastT)lastT=t;var dt=Math.min((t-lastT)/1000,0.05);lastT=t;
+      ctx.clearRect(0,0,W,H);
+      // 波2本
+      for(var si=0;si<2;si++){
+        var ph=(t*0.0004*(si+1))%(Math.PI*2);
+        ctx.beginPath();ctx.moveTo(0,H*(0.4+si*0.2));
+        for(var x=0;x<=W;x+=3)ctx.lineTo(x,H*(0.4+si*0.2)+Math.sin(x*0.007+ph)*(8+si*4));
+        var wg=ctx.createLinearGradient(0,0,W,0);
+        var wop=0.15-si*0.04;
+        wg.addColorStop(0,'rgba(6,199,85,0)');wg.addColorStop(0.3,'rgba(6,199,85,'+wop+')');
+        wg.addColorStop(0.5,'rgba(255,255,255,'+(wop*0.8)+')');wg.addColorStop(0.7,'rgba(6,199,85,'+wop+')');wg.addColorStop(1,'rgba(6,199,85,0)');
+        ctx.strokeStyle=wg;ctx.lineWidth=0.7;ctx.stroke();
+      }
+      // パーティクル（泡）
+      for(var pi=pts.length-1;pi>=0;pi--){
+        var p=pts[pi];p.x+=p.vx;p.y+=p.vy;p.ph+=p.ps;
+        if(p.y<-10||p.x<-15||p.x>W+15){pts.splice(pi,1);spPt(false);continue;}
+        var op=p.op*(0.6+0.4*Math.sin(p.ph));
+        var gr=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3.5);
+        gr.addColorStop(0,'rgba('+p.c[0]+','+p.c[1]+','+p.c[2]+','+op+')');
+        gr.addColorStop(1,'rgba('+p.c[0]+','+p.c[1]+','+p.c[2]+',0)');
+        ctx.beginPath();ctx.arc(p.x,p.y,p.r*3.5,0,Math.PI*2);ctx.fillStyle=gr;ctx.fill();
+      }
+      // 流れ星
+      starTimer--;if(starTimer<=0){starTimer=120+Math.floor(Math.random()*150);spawnStar();}
+      for(var sti=stars.length-1;sti>=0;sti--){
+        var s=stars[sti];s.life++;s.x+=s.vx;s.y+=s.vy;
+        if(s.fadeIn){s.op=Math.min(s.op+0.08,0.9);if(s.op>=0.9)s.fadeIn=false;}
+        else{s.op=Math.max(s.op-0.018,0);}
+        if(s.life>s.maxLife||s.op<=0){stars.splice(sti,1);continue;}
+        var speed=Math.sqrt(s.vx*s.vx+s.vy*s.vy);
+        var tx=s.x-s.vx*(s.len/speed),ty=s.y-s.vy*(s.len/speed);
+        var stg=ctx.createLinearGradient(tx,ty,s.x,s.y);
+        stg.addColorStop(0,'rgba('+s.col[0]+','+s.col[1]+','+s.col[2]+',0)');
+        stg.addColorStop(1,'rgba('+s.col[0]+','+s.col[1]+','+s.col[2]+','+s.op+')');
+        ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(s.x,s.y);ctx.strokeStyle=stg;ctx.lineWidth=1.2;ctx.stroke();
+      }
+      raf=requestAnimationFrame(draw);
+    }
+    resize();var n=Math.min(Math.max(Math.floor(W*H/2000),20),60);for(var i=0;i<n;i++)spPt(true);
+    raf=requestAnimationFrame(draw);window.addEventListener('resize',function(){resize();});
+  });
+}
+
+
+/* =====================================================
+   6. PORTFOLIO CARD CANVAS
+   ===================================================== */
+function initPortCanvas(){
+  var palettes=[[[240,201,106],[255,255,255],[201,168,76],[220,200,150]],[[255,220,120],[240,201,106],[255,255,200],[201,168,76]],[[180,220,255],[255,255,255],[140,190,255],[200,230,255]],[[255,255,255],[255,220,200],[240,200,180],[255,240,230]],[[120,240,220],[255,255,255],[80,210,190],[180,255,240]],[[240,240,160],[255,255,255],[210,210,100],[230,230,180]]];
+  document.querySelectorAll('.port-canvas').forEach(function(cv,idx){
+    var pal=palettes[idx%palettes.length];var ctx=cv.getContext('2d'),W=0,H=0,pts=[],waves=[],raf=null,running=false,lastT=0;
+    function resize(){var p=cv.parentElement;W=cv.width=p.offsetWidth;H=cv.height=p.offsetHeight;waves=[];for(var i=0;i<2;i++){var c=pal[i%pal.length];waves.push({amp:7+i*4,freq:0.007+i*0.003,spd:0.5+i*0.4,phase:(Math.PI)*i,y:H*(0.38+i*0.24),op:0.18+i*0.05,lw:0.7,c:c});}}
+    function spPt(rand){var c=pal[Math.floor(Math.random()*pal.length)];pts.push({x:rand?Math.random()*W:(Math.random()<0.5?-4:W+4),y:rand?Math.random()*H:Math.random()*H,vx:(Math.random()-0.5)*0.28,vy:-(Math.random()*0.45+0.1),r:Math.random()*1.8+0.3,op:Math.random()*0.8+0.2,ph:Math.random()*Math.PI*2,ps:Math.random()*0.025+0.008,c:c});}
+    function initPts(){pts=[];var n=Math.min(Math.max(Math.floor(W*H/2200),18),55);for(var i=0;i<n;i++)spPt(true);}
+    function draw(t){if(!running)return;if(!lastT)lastT=t;var dt=Math.min((t-lastT)/1000,0.05);lastT=t;ctx.clearRect(0,0,W,H);for(var wi=0;wi<waves.length;wi++){var wv=waves[wi];wv.phase+=wv.spd*dt;ctx.beginPath();ctx.moveTo(0,wv.y);for(var x=0;x<=W;x+=2){ctx.lineTo(x,wv.y+Math.sin(x*wv.freq+wv.phase)*wv.amp);}var g=ctx.createLinearGradient(0,0,W,0);var rc=wv.c;g.addColorStop(0,'rgba('+rc[0]+','+rc[1]+','+rc[2]+',0)');g.addColorStop(0.3,'rgba('+rc[0]+','+rc[1]+','+rc[2]+','+wv.op+')');g.addColorStop(0.7,'rgba('+rc[0]+','+rc[1]+','+rc[2]+','+wv.op+')');g.addColorStop(1,'rgba('+rc[0]+','+rc[1]+','+rc[2]+',0)');ctx.strokeStyle=g;ctx.lineWidth=wv.lw;ctx.stroke();}for(var pi=pts.length-1;pi>=0;pi--){var p=pts[pi];p.x+=p.vx;p.y+=p.vy;p.ph+=p.ps;if(p.y<-10||p.x<-20||p.x>W+20){pts.splice(pi,1);spPt(false);continue;}var op=p.op*(0.6+0.4*Math.sin(p.ph));var gr=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3.2);gr.addColorStop(0,'rgba('+p.c[0]+','+p.c[1]+','+p.c[2]+','+op+')');gr.addColorStop(0.5,'rgba('+p.c[0]+','+p.c[1]+','+p.c[2]+','+(op*0.3)+')');gr.addColorStop(1,'rgba('+p.c[0]+','+p.c[1]+','+p.c[2]+',0)');ctx.beginPath();ctx.arc(p.x,p.y,p.r*3.2,0,Math.PI*2);ctx.fillStyle=gr;ctx.fill();}raf=requestAnimationFrame(draw);}
+    function start(){running=true;lastT=0;resize();initPts();if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(draw);}
+    function stop(){running=false;if(raf){cancelAnimationFrame(raf);raf=null;}lastT=0;}
+    cv._portAnim={start:start,stop:stop};window.addEventListener('resize',function(){if(running){resize();initPts();}});
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)start();else stop();});},{threshold:0.1});io.observe(cv.parentElement);
+  });
+}
+
+
+/* =====================================================
+   7. SERVICE MINI-CANVAS
+   ===================================================== */
+function initSrvMiniCanvas(){
+  var pals=[[[240,201,106],[255,255,255],[255,220,130]],[[255,255,255],[240,201,106],[200,180,100]],[[180,220,255],[255,255,255],[140,200,255]]];
+  document.querySelectorAll('.srv-mini-canvas').forEach(function(cv,idx){
+    var pal=pals[idx%pals.length],ctx=cv.getContext('2d'),W=0,H=0,pts=[],raf=null;
+    function resize(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}
+    function spPt(rand){var c=pal[Math.floor(Math.random()*pal.length)];pts.push({x:rand?Math.random()*W:W/2+(Math.random()-0.5)*W,y:rand?Math.random()*H:H+2,vx:(Math.random()-0.5)*0.3,vy:-(Math.random()*0.4+0.1),r:Math.random()*1.2+0.2,op:Math.random()*0.9+0.2,ph:Math.random()*Math.PI*2,ps:Math.random()*0.04+0.015,c:c});}
+    function draw(){ctx.clearRect(0,0,W,H);for(var i=pts.length-1;i>=0;i--){var p=pts[i];p.x+=p.vx;p.y+=p.vy;p.ph+=p.ps;if(p.y<-4||p.x<-4||p.x>W+4){pts.splice(i,1);spPt(false);continue;}var op=p.op*(0.55+0.45*Math.sin(p.ph));var gr=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3);gr.addColorStop(0,'rgba('+p.c[0]+','+p.c[1]+','+p.c[2]+','+op+')');gr.addColorStop(1,'rgba('+p.c[0]+','+p.c[1]+','+p.c[2]+',0)');ctx.beginPath();ctx.arc(p.x,p.y,p.r*3,0,Math.PI*2);ctx.fillStyle=gr;ctx.fill();}raf=requestAnimationFrame(draw);}
+    resize();for(var i=0;i<12;i++)spPt(true);raf=requestAnimationFrame(draw);
+  });
+}
+
+
+/* =====================================================
+   8. PAGE SWITCHING（ゴールドワイプ遷移）
+   ===================================================== */
+function showPage(name){
+  PageTransition.run(function(){
+    var cur=document.querySelector('.page.active');
+    if(cur&&cur.id!=='page-home')SubHeroAnim.stopAll(cur);
+    document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+    document.querySelectorAll('.nav-links a').forEach(function(a){a.classList.remove('active');});
+    var tgt=document.getElementById('page-'+name);
+    if(tgt){tgt.classList.add('active');setTimeout(function(){tgt.classList.add('page-reveal');},10);}
+    var nav=document.getElementById('nav-'+name);if(nav)nav.classList.add('active');
+    window.scrollTo({top:0,behavior:'instant'});
+    initReveal();
+    if(name==='home'){HeroAnim.start();if(window.MatrixRain)window.MatrixRain.start();}else{HeroAnim.stop();if(window.MatrixRain)window.MatrixRain.stop();if(tgt)SubHeroAnim.startAll(tgt);}
+  });
+}
+
+function initReveal(){
+  var els=document.querySelectorAll('.page.active .reveal');
+  els.forEach(function(el){el.classList.add('visible');});
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.05});
+  els.forEach(function(el){obs.observe(el);});
+}
+
+function filterPort(cat){
+  document.querySelectorAll('#port-grid .port-item').forEach(function(el){el.style.display=(cat==='all'||el.dataset.cat===cat)?'':'none';});
+  ['all','video','web','app'].forEach(function(c){var btn=document.getElementById('filter-'+c);if(!btn)return;btn.style.background=c===cat?'var(--gold)':'transparent';btn.style.color=c===cat?'var(--black)':'#888';});
+}
+
+
+/* =====================================================
+   9. FORM SUBMIT
+   ===================================================== */
+function handleSubmit(){
+  var name=document.getElementById('f-name').value.trim();
+  var email=document.getElementById('f-email').value.trim();
+  var company=document.getElementById('f-company').value.trim();
+  var type=document.getElementById('f-type').value;
+  var message=document.getElementById('f-message').value.trim();
+  var status=document.getElementById('form-status');
+  if(!name||!email){status.innerHTML='<p style="color:#e74c3c;margin-bottom:12px;">※ お名前とメールアドレスは必須です。</p>';return;}
+  var btn=document.querySelector('.form-submit');btn.disabled=true;btn.textContent='送信中...';status.innerHTML='';
+  fetch('https://formspree.io/f/mnjgpelk',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:name,email:email,company:company,type:type,message:message})})
+  .then(function(r){
+    if(r.ok){status.innerHTML='<p style="color:#C9A84C;margin-bottom:12px;">✔ 送信しました。1〜2営業日以内にご連絡いたします。</p>';['f-name','f-email','f-company','f-message'].forEach(function(id){document.getElementById(id).value='';});document.getElementById('f-type').value='';}
+    else{status.innerHTML='<p style="color:#e74c3c;margin-bottom:12px;">送信に失敗しました。LINEよりご連絡ください。</p>';}
+    btn.disabled=false;btn.textContent='送信する →';
+  }).catch(function(){status.innerHTML='<p style="color:#e74c3c;margin-bottom:12px;">通信エラーが発生しました。</p>';btn.disabled=false;btn.textContent='送信する →';});
+}
+
+
+/* =====================================================
+   10. CUSTOM CURSOR
+   ===================================================== */
+(function(){
+  var dot=document.getElementById('sui-cursor');
+  var trail=document.getElementById('sui-cursor-trail');
+  if(!dot||!trail)return;
+  var mx=0,my=0,tx=0,ty=0;
+  document.addEventListener('mousemove',function(e){
+    mx=e.clientX;my=e.clientY;
+    dot.style.left=mx+'px';dot.style.top=my+'px';
+  });
+  // トレイルは少し遅れてついてくる
+  (function animTrail(){
+    tx+=(mx-tx)*0.12;ty+=(my-ty)*0.12;
+    trail.style.left=tx+'px';trail.style.top=ty+'px';
+    requestAnimationFrame(animTrail);
+  })();
+  // ホバー時に拡大
+  document.querySelectorAll('a,button,.srv-card,.why-card,.testi-card,.kpi').forEach(function(el){
+    el.addEventListener('mouseenter',function(){dot.style.width='20px';dot.style.height='20px';trail.style.width='50px';trail.style.height='50px';trail.style.borderColor='rgba(201,168,76,0.6)';});
+    el.addEventListener('mouseleave',function(){dot.style.width='12px';dot.style.height='12px';trail.style.width='32px';trail.style.height='32px';trail.style.borderColor='rgba(201,168,76,0.35)';});
+  });
+})();
+
+
+/* =====================================================
+   11. SCROLL CTA + PROGRESS BAR
+   ===================================================== */
+(function(){
+  var cta=document.getElementById('scroll-cta');
+  var bar=document.getElementById('progress-bar');
+  window.addEventListener('scroll',function(){
+    var scrolled=window.scrollY;
+    var total=document.documentElement.scrollHeight-window.innerHeight;
+    // プログレスバー
+    if(bar) bar.style.width=(total>0?(scrolled/total*100):0)+'%';
+    // スクロールCTA：300px以上スクロールしたら表示
+    if(cta){
+      if(scrolled>300){cta.classList.add('visible');}
+      else{cta.classList.remove('visible');}
+    }
+  });
+})();
+
+
+/* =====================================================
+   12. COUNT-UP ANIMATION
+   ===================================================== */
+function initCountUp(){
+  var els=document.querySelectorAll('.count-up');
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting)return;
+      var el=entry.target;
+      if(el._counted)return;
+      el._counted=true;
+      var target=parseInt(el.dataset.target);
+      var duration=1800;
+      var start=performance.now();
+      (function tick(now){
+        var p=Math.min((now-start)/duration,1);
+        // easeOut
+        var ease=1-Math.pow(1-p,3);
+        el.textContent=Math.floor(ease*target);
+        if(p<1)requestAnimationFrame(tick);
+        else el.textContent=target;
+      })(start);
+      obs.unobserve(el);
+    });
+  },{threshold:0.3});
+  els.forEach(function(el){obs.observe(el);});
+}
+
+
+/* =====================================================
+   13. CHAT WIDGET
+   ===================================================== */
+var chatOpen=false;
+function toggleChat(){
+  chatOpen=!chatOpen;
+  var panel=document.getElementById("chat-panel");
+  if(panel) panel.classList.toggle("open",chatOpen);
+}
+function chatGo(type){
+  var MSGS={
+    video:"動画制作についてのご相談ですね！LINEでお気軽にご連絡ください。",
+    web:"WEB・アプリ開発についてのご相談ですね！LINEで詳しくお聴きします。",
+    sns:"SNS運用についてのご相談ですね！月額プランもご用意しています。",
+    price:"料金・お見積もりのご相談ですね！まずLINEでヒアリングします。",
+    other:"どんなご相談でもお気軽に！LINEで承ります。"
+  };
+  var body=document.getElementById("chat-body");
+  if(!body)return;
+  var a=document.createElement("a");
+  a.href="https://line.me/ti/p/9615727302";
+  a.target="_blank";
+  a.style.cssText="display:flex;align-items:center;gap:8px;background:#06C755;color:#fff;padding:12px 18px;font-size:13px;font-weight:700;text-decoration:none;justify-content:center;";
+  a.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> LINEで相談する';
+  var bk=document.createElement("button");
+  bk.onclick=resetChat;
+  bk.style.cssText="background:none;border:none;color:#555;font-size:11px;cursor:pointer;margin-top:10px;display:block;width:100%;text-align:center;";
+  bk.textContent="← 戻る";
+  var msgDiv=document.createElement("div");
+  msgDiv.className="chat-q";
+  msgDiv.style.color="#C9A84C";
+  msgDiv.style.fontWeight="500";
+  msgDiv.style.marginBottom="16px";
+  msgDiv.textContent=MSGS[type]||"";
+  body.innerHTML="";
+  body.appendChild(msgDiv);
+  body.appendChild(a);
+  body.appendChild(bk);
+}
+function resetChat(){
+  var body=document.getElementById("chat-body");
+  if(!body)return;
+  var ITEMS=[
+    ["video","▶","動画制作について"],
+    ["web","◎","WEB・アプリ開発について"],
+    ["sns","◈","SNS運用について"],
+    ["price","￥","料金・見積もりを聞きたい"],
+    ["other","→","その他のご相談"]
+  ];
+  var qDiv=document.createElement("div");
+  qDiv.className="chat-q";
+  qDiv.textContent="どのようなご相談ですか？";
+  var opts=document.createElement("div");
+  opts.className="chat-opts";
+  ITEMS.forEach(function(item){
+    var btn=document.createElement("button");
+    btn.className="chat-opt";
+    (function(t){btn.onclick=function(){chatGo(t);};})(item[0]);
+    var ic=document.createElement("span");
+    ic.className="chat-opt-icon";
+    ic.textContent=item[1];
+    btn.appendChild(ic);
+    btn.appendChild(document.createTextNode(item[2]));
+    opts.appendChild(btn);
+  });
+  body.innerHTML="";
+  body.appendChild(qDiv);
+  body.appendChild(opts);
+}
+
+// チャット外クリックで閉じる
+document.addEventListener('click',function(e){
+  var widget=document.getElementById('chat-widget');
+  if(chatOpen&&widget&&!widget.contains(e.target)){
+    chatOpen=false;
+    var panel=document.getElementById('chat-panel');
+    if(panel)panel.classList.remove('open');
+  }
+});
+
+
+
+/* =====================================================
+   SIMULATOR
+   ===================================================== */
+var SIM_DATA = {
+  short: {
+    label: '本数・規模を選ぶ',
+    opts: [
+      {label:'1本', price:'10,000', unit:'（撮影・企画・編集込み）'},
+      {label:'5本', price:'47,500', unit:'(まとめ発注で5%OFF)'},
+      {label:'10本', price:'90,000', unit:'(まとめ発注で10%OFF)'},
+      {label:'20本以上', price:'カスタム', unit:('お見積もりご相談ください')}
+    ]
+  },
+  youtube: {
+    label: '動画の尺数を選ぶ',
+    opts: [
+      {label:'5分', price:'10,000', unit:'(編集のみ)'},
+      {label:'10分', price:'20,000', unit:'(テロップ・BGM込)'},
+      {label:'20分', price:'38,000', unit:'(テロップ・BGM・サムネ込)'},
+      {label:'30分以上', price:'カスタム', unit:'お見積もりご相談ください'}
+    ]
+  },
+  web: {
+    label: 'サイトの規模を選ぶ',
+    opts: [
+      {label:'LP 1枚', price:'80,000', unit:'(デザイン・コーディング込)'},
+      {label:'コーポレート', price:'200,000', unit:'(5ページ程度)'},
+      {label:'ECサイト', price:'300,000', unit:'(ショッピング機能込)'},
+      {label:'大規模', price:'カスタム', unit:'お見積もりご相談ください'}
+    ]
+  },
+  app: {
+    label: 'アプリの規模を選ぶ',
+    opts: [
+      {label:'シンプル', price:'500,000', unit:'(基本機能のみ)'},
+      {label:'標準', price:'1,000,000', unit:'(ソーシャル・決済機能)'},
+      {label:'カスタム', price:'相談', unit:'要件により大きく変動します'}
+    ]
+  },
+  sns: {
+    label: 'プランを選ぶ',
+    opts: [
+      {label:'ライト', price:'50,000', unit:'(/月・投稿代行8本)'},
+      {label:'スタンダード', price:'100,000', unit:'(/月・投稿代行16本)'},
+      {label:'プレミアム', price:'200,000', unit:'(/月・分析レポート込)'},
+      {label:'カスタム', price:'相談', unit:'フルサポートご相談'}
+    ]
+  }
+};
+
+var simState = {service:'short', optIdx:0};
+
+function simSelect(group, btn) {
+  var row = document.getElementById('sim-' + group);
+  if(!row) return;
+  row.querySelectorAll('.sim-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  if(group === 'service') {
+    simState.service = btn.dataset.type;
+    simState.optIdx = 0;
+    simRenderOptions();
+  } else {
+    simState.optIdx = parseInt(btn.dataset.idx);
+  }
+  simUpdatePrice();
+}
+
+function simRenderOptions() {
+  var data = SIM_DATA[simState.service];
+  if(!data) return;
+  var wrap = document.getElementById('sim-options');
+  var label = document.getElementById('sim-opt-label');
+  if(label) label.textContent = data.label;
+  if(!wrap) return;
+  wrap.innerHTML = '';
+  data.opts.forEach(function(opt, i) {
+    var btn = document.createElement('button');
+    btn.className = 'sim-btn' + (i===0?' active':'');
+    btn.dataset.idx = i;
+    btn.textContent = opt.label;
+    btn.onclick = function(){ simSelect('options', this); };
+    wrap.appendChild(btn);
+  });
+}
+
+function simUpdatePrice() {
+  var data = SIM_DATA[simState.service];
+  if(!data) return;
+  var opt = data.opts[simState.optIdx] || data.opts[0];
+  var pEl  = document.getElementById('sim-price-val');
+  var uEl  = document.getElementById('sim-price-unit');
+  var yenEl = document.getElementById('sim-price-yen');
+  var tilEl = document.getElementById('sim-price-tilde');
+  var isCustom = (opt.price === 'カスタム' || opt.price === '相談');
+  if(pEl) pEl.textContent = isCustom ? '無料相談にてご確認を' : opt.price;
+  if(uEl) uEl.textContent = isCustom ? '内容・工数により大きく変動します' : opt.unit;
+  if(yenEl) yenEl.style.display = isCustom ? 'none' : '';
+  if(tilEl) tilEl.style.display = isCustom ? 'none' : '';
+  // カスタム時はフォントサイズを小さくして収める
+  if(pEl) pEl.style.fontSize = isCustom ? 'clamp(18px,2.5vw,26px)' : '';
+  if(pEl) pEl.style.fontFamily = isCustom ? 'sans-serif' : '';
+}
+
+function initSimulator() {
+  simRenderOptions();
+  simUpdatePrice();
+}
+
+
+/* =====================================================
+   FAQ TOGGLE
+   ===================================================== */
+function toggleFaq(qEl) {
+  var item = qEl.parentElement;
+  var isOpen = item.classList.contains('open');
+  // 全部閉じる
+  document.querySelectorAll('.faq-item.open').forEach(function(el){
+    el.classList.remove('open');
+  });
+  if(!isOpen) item.classList.add('open');
+}
+
+/* =====================================================
+   14. BOOT
+   ===================================================== */
+
+
+/* =====================================================
+   SPOTLIGHT EFFECT
+   ===================================================== */
+(function(){
+  var spot = document.getElementById('spotlight');
+  if(!spot) return;
+  document.addEventListener('mousemove', function(e){
+    spot.style.background =
+      'radial-gradient(circle 320px at '+e.clientX+'px '+e.clientY+'px,'
+      +'rgba(201,168,76,0.055) 0%,transparent 70%)';
+  });
+})();
+
+
+/* =====================================================
+   PARALLAX
+   ===================================================== */
+(function(){
+  var heroGrid = document.querySelector('.hero-grid');
+  var heroBg   = document.querySelector('.hero-bg');
+  window.addEventListener('scroll', function(){
+    var sy = window.scrollY;
+    if(heroGrid) heroGrid.style.transform = 'translateY('+(sy*0.18)+'px)';
+    if(heroBg)   heroBg.style.transform   = 'translateY('+(sy*0.1)+'px)';
+  }, {passive:true});
+})();
+
+
+/* =====================================================
+   TEXT GLITCH - 全行同時カスケード発火版
+   ===================================================== */
+(function(){
+  function triggerAllGlitch(){
+    var els=document.querySelectorAll('.glitch-wrap');
+    els.forEach(function(el,i){
+      setTimeout(function(){
+        el.classList.add('glitching');
+        setTimeout(function(){el.classList.remove('glitching');},420);
+      },i*80);
+    });
+  }
+  function triggerOne(el){
+    if(el.classList.contains('glitching'))return;
+    // 全行同時発火
+    triggerAllGlitch();
+  }
+  window.addEventListener('load',function(){
+    setTimeout(triggerAllGlitch,1200);
+    function next(){
+      setTimeout(function(){triggerAllGlitch();next();},6000+Math.random()*4000);
+    }
+    next();
+  });
+  document.addEventListener('mouseover',function(e){
+    var el=e.target.closest('.glitch-wrap');
+    if(el) triggerOne(el);
+  });
+})();
+
+
+/* =====================================================
+   TYPING ANIMATION
+   ===================================================== */
+(function(){
+  var lines = [
+    '動画制作からWEB・アプリ開発まで、',
+    '成果に直結するクリエイティブをワンストップで。',
+    '単発1本から月額継続まで、まずはお気軽にご相談ください。'
+  ];
+  var el = document.getElementById('hero-typing');
+  if(!el) return;
+
+  function typeLine(lineIdx, charIdx, html){
+    if(lineIdx >= lines.length){
+      // 全部打ち終わったらカーソルだけ残す
+      el.innerHTML = html + '<span class="typing-cursor"></span>';
+      return;
+    }
+    var line = lines[lineIdx];
+    if(charIdx === 0 && lineIdx > 0) html += '<br>';
+    if(charIdx < line.length){
+      html += line[charIdx];
+      el.innerHTML = html + '<span class="typing-cursor"></span>';
+      setTimeout(function(){ typeLine(lineIdx, charIdx+1, html); },
+        38 + Math.random()*22);
+    } else {
+      // 行末で少し待ってから次の行へ
+      setTimeout(function(){ typeLine(lineIdx+1, 0, html); }, 220);
+    }
+  }
+
+  window.addEventListener('load', function(){
+    // イントロが終わった後に開始
+    setTimeout(function(){ typeLine(0, 0, ''); }, 5200);
+  });
+})();
+
+
+/* =====================================================
+   CARD TILT (3D傾き)
+   ===================================================== */
+(function(){
+  function initTilt(el){
+    el.addEventListener('mousemove', function(e){
+      var r  = el.getBoundingClientRect();
+      var cx = r.left + r.width/2;
+      var cy = r.top  + r.height/2;
+      var dx = (e.clientX - cx) / (r.width/2);
+      var dy = (e.clientY - cy) / (r.height/2);
+      var rotX = -dy * 8;
+      var rotY =  dx * 8;
+      el.style.transform =
+        'perspective(600px) rotateX('+rotX+'deg) rotateY('+rotY+'deg) translateZ(4px)';
+      var shine = el.querySelector('.tilt-shine');
+      if(shine){
+        var px = ((e.clientX - r.left)/r.width*100).toFixed(1);
+        var py = ((e.clientY - r.top)/r.height*100).toFixed(1);
+        shine.style.background =
+          'radial-gradient(circle at '+px+'% '+py+'%,rgba(255,255,255,0.14),transparent 60%)';
+        shine.style.opacity = '1';
+      }
+    });
+    el.addEventListener('mouseleave', function(){
+      el.style.transform = 'perspective(600px) rotateX(0) rotateY(0) translateZ(0)';
+      el.style.transition = 'transform 0.45s cubic-bezier(0.23,1,0.32,1)';
+      var shine = el.querySelector('.tilt-shine');
+      if(shine) shine.style.opacity = '0';
+      setTimeout(function(){ el.style.transition = 'transform 0.1s ease'; }, 460);
+    });
+  }
+  window.addEventListener('load', function(){
+    document.querySelectorAll('.tilt-card').forEach(initTilt);
+    // why-cardにもチルト適用
+    document.querySelectorAll('.why-card').forEach(function(el){
+      el.classList.add('tilt-card');
+      var shine = document.createElement('div');
+      shine.className = 'tilt-shine';
+      el.insertBefore(shine, el.firstChild);
+      initTilt(el);
+    });
+  });
+})();
+
+
+/* =====================================================
+   MAGNETIC BUTTONS
+   ===================================================== */
+(function(){
+  function initMagnetic(el){
+    var strength = 0.35;
+    el.addEventListener('mousemove', function(e){
+      var r  = el.getBoundingClientRect();
+      var cx = r.left + r.width/2;
+      var cy = r.top  + r.height/2;
+      var dx = (e.clientX - cx) * strength;
+      var dy = (e.clientY - cy) * strength;
+      el.style.transform = 'translate('+dx+'px,'+dy+'px)';
+    });
+    el.addEventListener('mouseleave', function(){
+      el.style.transform = 'translate(0,0)';
+      el.style.transition = 'transform 0.5s cubic-bezier(0.23,1,0.32,1)';
+      setTimeout(function(){ el.style.transition = ''; }, 500);
+    });
+  }
+  window.addEventListener('load', function(){
+    // 主要ボタンに磁石効果
+    document.querySelectorAll('.btn-gold,.nav-cta,.btn-line-green,.btn-black,.btn-outline').forEach(function(el){
+      el.classList.add('magnetic');
+      initMagnetic(el);
+    });
+  });
+})();
+
+
+/* =====================================================
+   BOUNCE-IN SCROLL ANIMATION
+   セクション見出しをバウンスで登場
+   ===================================================== */
+(function(){
+  window.addEventListener('load', function(){
+    var targets = document.querySelectorAll('.sec-title, .sec-label, .stat-card, .flow-step, .faq-item');
+    targets.forEach(function(el){ el.classList.add('bounce-in'); });
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e, i){
+        if(e.isIntersecting){
+          setTimeout(function(){
+            e.target.classList.add('visible');
+          }, 60 * (Array.from(targets).indexOf(e.target) % 6));
+          obs.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.15});
+    targets.forEach(function(el){ obs.observe(el); });
+  });
+})();
+
+/* =====================================================
+   MOBILE NAVIGATION
+   ===================================================== */
+/* =====================================================
+   FILM COUNTDOWN
+   ===================================================== */
+var FilmCountdown=(function(){
+  var overlay=document.getElementById("film-countdown");
+  var numEl=document.getElementById("film-num");
+  var cv=document.getElementById("film-cv");
+  var ctx=cv?cv.getContext("2d"):null;
+  var W=0,H=0,grainRaf=null;
+  function resize(){if(!cv)return;W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;}
+  function drawGrain(){
+    if(!ctx||!overlay||overlay.style.opacity==="0")return;
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<800;i++){
+      var x=Math.random()*W,y=Math.random()*H,r=Math.random()*1.5,a=Math.random()*0.35;
+      ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);
+      ctx.fillStyle="rgba(255,255,255,"+a+")";ctx.fill();
+    }
+    if(Math.random()<0.15){
+      ctx.beginPath();
+      var sx=Math.random()*W;
+      ctx.moveTo(sx,0);ctx.lineTo(sx+Math.random()*10-5,H);
+      ctx.strokeStyle="rgba(255,255,255,"+(Math.random()*0.15)+")";
+      ctx.lineWidth=Math.random()*1.5;ctx.stroke();
+    }
+    ctx.strokeStyle="rgba(255,255,255,0.06)";ctx.lineWidth=8;
+    ctx.strokeRect(20,20,W-40,H-40);
+    grainRaf=requestAnimationFrame(drawGrain);
+  }
+  function show(cb){
+    if(!overlay||!numEl)return setTimeout(cb,50);
+    resize();
+    overlay.style.opacity="1";overlay.style.display="flex";
+    document.body.classList.add("cine-mode");
+    grainRaf=requestAnimationFrame(drawGrain);
+    var n=3;numEl.textContent=n;
+    var tick=setInterval(function(){
+      n--;
+      if(n<=0){
+        clearInterval(tick);cb();
+        overlay.style.transition="opacity 0.25s ease";
+        overlay.style.opacity="0";
+        setTimeout(function(){
+          overlay.style.display="none";overlay.style.transition="";
+          document.body.classList.remove("cine-mode");
+          if(grainRaf)cancelAnimationFrame(grainRaf);
+        },260);return;
+      }
+      numEl.textContent=n;
+      numEl.style.opacity="0.2";
+      setTimeout(function(){numEl.style.opacity="1";},60);
+    },350);
+  }
+  window.addEventListener("resize",resize);
+  return{show:show};
+})();
+
+
+/* =====================================================
+   MATRIX RAIN
+   ===================================================== */
+(function(){
+  var cv=document.getElementById("matrix-canvas");
+  if(!cv)return;
+  var ctx=cv.getContext("2d"),W=0,H=0,cols=[],raf=null;
+  var chars="SUICREATIVE0123456789VIDEOWEBAPPDESIGN";
+  function resize(){
+    W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;
+    var n=Math.floor(W/18);cols=[];
+    for(var i=0;i<n;i++)cols.push(Math.random()*H/14|0);
+  }
+  function draw(){
+    ctx.fillStyle="rgba(0,0,0,0.045)";ctx.fillRect(0,0,W,H);
+    for(var i=0;i<cols.length;i++){
+      var c=chars[Math.floor(Math.random()*chars.length)];
+      ctx.fillStyle="rgba(201,168,76,0.85)";
+      ctx.font="12px monospace";
+      ctx.fillText(c,i*18,cols[i]*14);
+      if(cols[i]*14>H&&Math.random()>0.975)cols[i]=0;else cols[i]++;
+    }
+    raf=requestAnimationFrame(draw);
+  }
+  function start(){cv.classList.add("visible");if(!raf)raf=requestAnimationFrame(draw);}
+  function stop(){cv.classList.remove("visible");if(raf){cancelAnimationFrame(raf);raf=null;}ctx.clearRect(0,0,W,H);}
+  resize();window.addEventListener("resize",resize);
+  window.MatrixRain={start:start,stop:stop};
+})();
+
+
+/* =====================================================
+   VHS GRAIN ON SCROLL
+   ===================================================== */
+(function(){
+  var noiseEl=document.getElementById("hero-noise");
+  if(!noiseEl)return;
+  window.addEventListener("scroll",function(){
+    var sy=window.scrollY;
+    var hero=document.querySelector(".hero");
+    if(!hero)return;
+    var ratio=Math.min(sy/hero.offsetHeight,1);
+    noiseEl.style.opacity=(0.03+ratio*0.12).toFixed(3);
+  },{passive:true});
+})();
+
+
+/* =====================================================
+   DASHBOARD BARS
+   ===================================================== */
+(function(){
+  function animateDash(section){
+    section.querySelectorAll(".dash-bar").forEach(function(bar){
+      bar.style.width=(bar.dataset.width||"0")+"%";
+    });
+    section.querySelectorAll(".dash-count").forEach(function(el){
+      if(el._anim)return;
+      el._anim=true;
+      var target=parseInt(el.dataset.val);
+      var unit=el.innerHTML.replace(/^[0-9]+/,"");
+      var t0=performance.now(),dur=1600;
+      (function tick(now){
+        var p=Math.min((now-t0)/dur,1);
+        var ease=1-Math.pow(1-p,3);
+        el.innerHTML=Math.floor(ease*target)+unit;
+        if(p<1)requestAnimationFrame(tick);
+        else el.innerHTML=target+unit;
+      })(t0);
+    });
+  }
+  window.addEventListener("load",function(){
+    var sec=document.querySelector(".dash-section");
+    if(!sec)return;
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting)return;
+        animateDash(sec);
+        obs.disconnect();
+      });
+    },{threshold:0.2});
+    obs.observe(sec);
+  });
+})();
+
+
+/* =====================================================
+   EXIT INTENT POPUP
+   ===================================================== */
+(function(){
+  var shown=false;
+  function showPopup(){
+    if(shown)return;shown=true;
+    var pop=document.getElementById("exit-popup");
+    if(pop)pop.classList.add("show");
+    if(typeof gtag!=="undefined")gtag("event","exit_intent",{event_category:"engagement"});
+  }
+  document.addEventListener("mouseleave",function(e){if(e.clientY<=0)showPopup();});
+  setTimeout(function(){if(!shown&&window.innerWidth<768)showPopup();},30000);
+  window.closeExitPopup=function(){
+    var pop=document.getElementById("exit-popup");
+    if(pop){pop.style.opacity="0";setTimeout(function(){pop.classList.remove("show");pop.style.opacity="";},300);}
+  };
+  window.addEventListener("load",function(){
+    var pop=document.getElementById("exit-popup");
+    if(pop)pop.addEventListener("click",function(e){if(e.target===pop)window.closeExitPopup();});
+  });
+})();
+
+
+/* =====================================================
+   VISITOR COUNTER
+   ===================================================== */
+(function(){
+  var bar=document.getElementById("visitor-bar");
+  if(!bar)return;
+  setTimeout(function(){bar.classList.add("show");},3000);
+  var numEl=document.getElementById("visitor-num");
+  var cEl=document.getElementById("consult-num");
+  var bv=2+Math.floor(Math.random()*4);
+  var bc=10+Math.floor(Math.random()*8);
+  if(numEl)numEl.textContent=bv;
+  if(cEl)cEl.textContent=bc;
+  setInterval(function(){
+    if(numEl&&Math.random()<0.3){
+      var d=Math.random()<0.5?1:-1;
+      numEl.textContent=Math.max(1,Math.min(9,parseInt(numEl.textContent)+d));
+    }
+  },8000);
+})();
+
+
+/* =====================================================
+   GA EVENT TRACKING
+   ===================================================== */
+(function(){
+  window.addEventListener("load",function(){
+    document.querySelectorAll(".btn-line-green,.line-cta a").forEach(function(el){
+      el.addEventListener("click",function(){
+        if(typeof gtag!=="undefined")gtag("event","line_click",{event_category:"contact",event_label:"LINE"});
+      });
+    });
+    document.querySelectorAll(".nav-cta").forEach(function(el){
+      el.addEventListener("click",function(){
+        if(typeof gtag!=="undefined")gtag("event","contact_click",{event_category:"contact"});
+      });
+    });
+    var scroll50=false;
+    window.addEventListener("scroll",function(){
+      if(!scroll50&&document.body.scrollHeight>window.innerHeight){
+        var pct=window.scrollY/(document.body.scrollHeight-window.innerHeight);
+        if(pct>=0.5){scroll50=true;if(typeof gtag!=="undefined")gtag("event","scroll_50",{event_category:"engagement"});}
+      }
+    },{passive:true});
+  });
+})();
+
+
+var mobileNavOpen = false;
+function toggleMobileNav() {
+  mobileNavOpen = !mobileNavOpen;
+  var nav = document.getElementById('mobile-nav');
+  var hb1 = document.getElementById('hb-1');
+  var hb2 = document.getElementById('hb-2');
+  var hb3 = document.getElementById('hb-3');
+  if(nav) nav.style.display = mobileNavOpen ? 'block' : 'none';
+  // ×マークアニメーション
+  if(hb1&&hb2&&hb3){
+    if(mobileNavOpen){
+      hb1.style.transform='translateY(5.5px) rotate(45deg)';
+      hb2.style.opacity='0';
+      hb3.style.transform='translateY(-5.5px) rotate(-45deg)';
+    } else {
+      hb1.style.transform='';hb2.style.opacity='';hb3.style.transform='';
+    }
+  }
+}
+function mobileNavGo(name) {
+  mobileNavOpen = false;
+  var nav = document.getElementById('mobile-nav');
+  if(nav) nav.style.display = 'none';
+  var hb1=document.getElementById('hb-1'),hb2=document.getElementById('hb-2'),hb3=document.getElementById('hb-3');
+  if(hb1&&hb2&&hb3){hb1.style.transform='';hb2.style.opacity='';hb3.style.transform='';}
+  showPage(name);
+}
+
+window.addEventListener('load',function(){
+  HeroAnim.start();
+  initReveal();
+  initPortCanvas();
+  initSrvMiniCanvas();
+  initCtaBands();
+  initLineCanvas();
+  initCountUp();
+});
 </script>
 </body>
 </html>
